@@ -18,15 +18,21 @@ gradescope_class_url:
 github_url: https://github.com/ucsb-cs9/w24
 
 start_week: 0
-start_date: 2024-01-08 00:00:00.00-7:00
+start_date: 2024-01-07 00:00:00.00-7:00  # has to be a Sunday
 num_weeks: 11
 extra_exam_week: true
 
+# ### https://registrar.sa.ucsb.edu/calendars/calendars-deadlines/academic-calendars
+# ### https://registrar.sa.ucsb.edu/calendars/calendars-deadlines/registration-pass-dates
 cal_dates: >                                                                    
   [                                                                            
     {"label":"W24 1st day of instruction", "date":"2023-01-08" },
+    {"label":"Holiday: MLK Jr. Day",  "date":"2024-01-15" },
+    {"label":"Holiday: Presidents' Day",  "date":"2024-02-19" },
+    {"label":"W24 deadline to drop courses", "date":"2024-02-05" },
+    {"label":"W24 CS 9 MIDTERM", "date":"2024-02-08" },
+    {"label":"W24 CS 9 FINAL (4:00pm - 7:00pm)", "date":"2024-03-19" },
     {"label":"W24 instruction ends", "date":"2024-03-15" },
-    {"label":"W24 CS 9 FINAL (12:00pm - 2:00pm)", "date":"2024-03-19" },
     {"label":"W24 qtr ends", "date":"2024-03-22" }
   ]
 

@@ -23,11 +23,11 @@ offerings:
    url: /	
    baseurl: /w24
    items:
-      - title: "Home"
+      - title: "W24 CS9 Home"
         url: /
         baseurl: /w24
 
 offering_links:
-   - title: Cal
+   - title: Calendar
      url: /info/calendar/
      description: "Assignment Calendar"
