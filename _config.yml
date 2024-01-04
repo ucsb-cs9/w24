@@ -25,8 +25,6 @@ extra_exam_week: true
 cal_dates: >                                                                    
   [                                                                            
     {"label":"W24 1st day of instruction", "date":"2023-01-08" },
-#    {"label":"Academic Integrity Contract Due", "date":"2023-10-10" },
-#    {"label":"F23 CS 9 MIDTERM (11am - 12:15pm)", "date":"2023-11-02" },
     {"label":"W24 instruction ends", "date":"2024-03-15" },
     {"label":"W24 CS 9 FINAL (12:00pm - 2:00pm)", "date":"2024-03-19" },
     {"label":"W24 qtr ends", "date":"2024-03-22" }
@@ -34,7 +32,7 @@ cal_dates: >
 
 kramdown:
    parse_block_html: true
-   default_lang: py
+   default_lang: cpp
 
 exclude:
    - vendor

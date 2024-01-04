@@ -19,15 +19,15 @@ home:
    baseurl: /
 
 offerings:
-   title: "Home page"
+   title: "w24"
    url: /	
-   baseurl: /w23
+   baseurl: /w24
    items:
       - title: "Home"
         url: /
         baseurl: /w24
 
 offering_links:
-   - title: Calendar
+   - title: Cal
      url: /info/calendar/
      description: "Assignment Calendar"
