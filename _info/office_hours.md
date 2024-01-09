@@ -6,6 +6,10 @@ ready: true
 
 <h1><strong>CS 9 Office Hours</strong></h1>
 
+# About Us
+
+[Learn more about the team behind CS 9 this quarter.](https://docs.google.com/presentation/d/e/2PACX-1vRrpo5ga5v_p6pg2lgmK5VJtAGALJyKak127KiMfJ5Ff50HZKxonAH1X1HLhhJeOsMAXyf_NPzPLgIm/pub?start=false&loop=false&delayms=60000)
+
 # Contact Us
 
 To ask us a quick question, please use [Piazza]({{ site.piazza_url }}). Do not email us individually.
