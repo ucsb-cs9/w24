@@ -3,8 +3,8 @@ layout: lab
 num: lab00
 ready: true
 desc: "Getting Started, Python Review"
-assigned: 2024-01-10 11:00:00.00-7
-due: 2024-01-17 23:59:59.59-7
+assigned: 2024-01-09 11:00:00.00-7
+due: 2024-01-15 23:59:59.59-7
 ---
 
 # Introduction
@@ -22,7 +22,10 @@ By the time you have completed this lab, you should have:
 
 We will use [Gradescope](https://wwww.gradescope.com) to grade all your homeworks, quizzes, and lab assignments. I have manually added everyone (using your @umail.ucsb.edu accounts) currently enrolled in the course to the Gradescope system. You should have received an email notification with instructions about logging into Gradescope. Once you follow the instructions to set your password, you should have access to our course on Gradescope. You should see "CMPSC 9" in your Winter 2024 courses.
 
-The lab assignment "Lab00" should appear in your Gradescope dashboard in CMPSC 9. You will need to submit your code for Lab00 using this page.
+The lab assignment "Lab00" should appear in your Gradescope dashboard in CMPSC 9. You will need to submit your code for Lab00 using the instructions on this page.
+
+As always in this class, you can submit your files as often as you'd like to Gradescope (we encourage you to submit your code often to back up your progress).
+
 
 # Install Python on your computer
 
@@ -127,7 +130,7 @@ Note that several `assert` statements are included after each function definitio
 
 In Python, things are executed line-by-line from top to bottom. So if your code has an error and an `assert` statement doesn't pass, then you will see which `assert` statement failed and execution will stop (no other statements after the error will be executed).
 
-In order to run your `lab00.py` file in IDLE, go to "Run" -> "Run Module". This will start the execution of the file you're working on and the output will be displayed in IDLE's Interactive Shell.
+In order to run your `lab00.py` file in IDLE, go to "Run" -> "Run Module". This will start the execution of the file you're working on and the output will be displayed in IDLE's Interactive Shell. Remember to configure IDLE to show line numbers - it will make debugging a lot easier.
 
 # Submitting to Gradescope
 
@@ -143,6 +146,10 @@ For this lab, if everything is correct, you'll see a successful submission passi
 
 ![Gradescope_results](Gradescope_results.PNG)
 
+Note: Be sure to log out of the machine before you leave. In fact, you should do this every time you walk away from a lab computer.
+
+# Troubleshooting
+
 **Tip: Removing print statements**
 If you see the following error message:
 
@@ -152,4 +159,3 @@ This may be because your code contains `print` statements when submitting to Gra
 
 If the tests don't pass, you may get some error message that may or may not be obvious at this point. Don't worry - if the tests didn't pass, take a minute to think about what may have caused the error. If your tests didn't pass and you're still not sure why you're getting the error, feel free to ask your TAs or Learning Assistants.
 
-Note: Be sure to log out of the machine before you leave. In fact, you should do this every time you walk away from a lab computer.
