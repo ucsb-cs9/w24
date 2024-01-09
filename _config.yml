@@ -11,9 +11,9 @@ course: "CS 9"
 qtr: "W24"
 instructor: "Prof K" 
 quarter: "Winter 2024"
-piazza_url: 
-gauchospace_course_page:
-gradescope_class_url:
+piazza_url: https://piazza.com/class/lr6pnwwwf0a18a
+gauchospace_url:
+gradescope_url: https://www.gradescope.com/courses/694482
 
 github_url: https://github.com/ucsb-cs9/w24
 
