@@ -155,7 +155,19 @@ If you see the following error message:
 
 ```The autograder failed to execute correctly. Please ensure that your submission is valid. Contact your course staff for help in debugging this issue. Make sure to include a link to this page so that they can help you most effectively.```
 
-This may be because your code contains `print` statements when submitting to Gradescope. Print statements sometimes confuses the autograder resulting in this message. In general, lab submissions do not require any `print` statements (though it may be helpful to use when debugging). If you see this error, try removing any `print` statements in your code and see if that resolves your issue.
+This may be because your code contains `print()` statements when submitting to Gradescope. Print statements sometimes confuses the autograder resulting in this message. In general, lab submissions do not require any `print` statements (though it may be helpful to use when debugging). If you see this error, try removing any `print` statements in your code and see if that resolves your issue.
 
 If the tests don't pass, you may get some error message that may or may not be obvious at this point. Don't worry - if the tests didn't pass, take a minute to think about what may have caused the error. If your tests didn't pass and you're still not sure why you're getting the error, feel free to ask your TAs or Learning Assistants.
+
+
+#### Assert statements
+
+If you include assertions that don't pass in your code, then it is likely that none of the tests on Gradescope will pass.
+
+You can try removing assert statements for the functions that you have not implemented yet, and see if you get credit for the tests that pass.
+
+
+#### EOF error
+
+If you are getting an EOF error, check that you are not using `input()` anywhere in your code. Parameters are passed directly into the function call, so there is no need for user input.
 
