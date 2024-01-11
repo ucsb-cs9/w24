@@ -20,7 +20,7 @@ By the time you have completed this lab, you should have:
 
 # Get setup with Gradescope
 
-We will use [Gradescope](https://wwww.gradescope.com) to grade all your homeworks, quizzes, and lab assignments. I have manually added everyone (using your @umail.ucsb.edu accounts) currently enrolled in the course to the Gradescope system. You should have received an email notification with instructions about logging into Gradescope. Once you follow the instructions to set your password, you should have access to our course on Gradescope. You should see "CMPSC 9" in your Winter 2024 courses.
+We will use [Gradescope]({{ site.gradescope }}) to grade all your homeworks, quizzes, and lab assignments. I have manually added everyone (using your @umail.ucsb.edu accounts) currently enrolled in the course to the Gradescope system. You should have received an email notification with instructions about logging into Gradescope. Once you follow the instructions to set your password, you should have access to our course on Gradescope. You should see "CMPSC 9" in your Winter 2024 courses.
 
 The lab assignment "Lab00" should appear in your Gradescope dashboard in CMPSC 9. You will need to submit your code for Lab00 using the instructions on this page.
 
