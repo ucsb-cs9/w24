@@ -171,3 +171,10 @@ You can try removing assert statements for the functions that you have not imple
 
 If you are getting an EOF error, check that you are not using `input()` anywhere in your code. Parameters are passed directly into the function call, so there is no need for user input.
 
+
+#### `ModuleNotFoundError: No module named ...`
+
+Check that you named your file EXACTLY as was specified - remember that Python is case-sensitive.
+
+---
+
