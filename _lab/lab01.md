@@ -53,17 +53,17 @@ Each Movie object should be able to call a method `toString` that you will imple
 ```python
 movie1 = Movie("About time", "Drama", 2013)
 print(movie1.toString())
-print()
+print() # separate two movies with a newline
 movie2 = Movie("eternal sunshine of the spotless mind", "Sci-Fi", 2004)
 print(movie2.toString())
 ```
 
 <b>Output:</b>
 
-<tt>
+```
 "About Time" (DRAMA) - 2013
 "Eternal Sunshine Of The Spotless Mind" (SCI-FI) - 2004
-</tt>
+```
 
 <b>IMPORTANT:</b> The `.toString()` return value in the example above does **not** contain a newline character (`\n`) at the end.
 
@@ -85,9 +85,14 @@ Your code should support the following constructor and methods:
 
 * `removeGenre(self, genre)` - Removes all movies of a certain genre from the MovieList if it exists. Your code will need to remove the genre entry from the MovieList's dictionary.  Note: the provided `genre` parameter value may be input in either lower / upper case.
 
-* `getMoviesByGenre(self, genre)` - Returns a string of all movies of a certain genre. This string should consist of a collection of strings - one line for each movie. <b>Since each movie will be in its own line within a single string, a newline character (`\n`) should be inserted between each line (if applicable) EXCEPT at the very last line where no newline character should exist)</b>. The order of the Movies in this string will be dictated by the order of the Movies in the MovieList's list for the Movie's genre. The Movie `toString()` method should be used when constructing this method's return string. If no Movies of the genre exist in the MovieList, then this method returns an empty string (`""`). Note: the `genre` parameter value may be in either lower / upper case.
+* `getMoviesByGenre(self, genre)` - Returns a string of all movies of a certain genre. This string should consist of a collection of strings - one line for each movie. 
+   - <b>Since each movie will be in its own line within a single string, a newline character (`\n`) should be inserted between each line (if applicable) EXCEPT at the very last line where no newline character should exist</b>. 
+   - The order of the Movies in this string will be dictated by the order of the Movies in the MovieList's list for the Movie's genre. 
+   - The Movie `toString()` method should be used when constructing this method's return string. 
+   - If no Movies of the specified genre exist in the MovieList, then this method returns an empty string (`""`). 
+   -  Note: the `genre` parameter value may be in either lower / upper case.
 
-* `doesMovieExist(self, movie)` - Returns True if the parameter `movie` (with matching title, genre, year) exists in the MovieList. Returns False otherwise.
+* `doesMovieExist(self, movie)` - Returns a Boolean `True` if the parameter `movie` (with matching title, genre, year) exists in the MovieList. Returns `False` otherwise.
 
 ## Submission
 
