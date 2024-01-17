@@ -50,7 +50,29 @@ Similarly, for strings, we would be able to store characters, ask about the leng
 ## Student Class Example
 
 ```
+# Student.py
+
 class Student:
+    """Student class keeps track of the student info:
+        storing a name and a PERM number."""
+    def __init__(self, name = None, number = None):
+        self.name = name
+        self.perm = number
+
+    def setName(self, name):
+        self.name = name
+
+    def setNumber(self, number):
+        self.perm = number
+
+    def info(self):
+        print("Name", self.name)
+        print("PERM #", self.perm) # not .number
+
+s1 = Student("Chris Gaucho", 1234567)
+s2 = Student()
+s2.setName("Wilma Gaucho")
+
 ```
 
 * When defining methods, the `self` parameter represents the current object we’re calling the method on
@@ -81,7 +103,7 @@ def __init__(self, name, perm):
 	self.perm = perm
 
 s1 = Student("Ricardo", 1234567)
-s1.printAttributes()
+s1.info()
 ```
 
 ## Initializing default values in the constructor
@@ -97,7 +119,7 @@ def __init__(self, name=None, perm=None):
 
 ```
 s1 = Student(perm = 1234567)
-s1.printAttributes()
+s1.info()
 
 # Student name: None, perm: 1234567
 ```
@@ -114,7 +136,7 @@ s3 = Student("Jill", 5555555)
 studentList = [s1, s2, s3]
 
 for student in studentList:
-	student.show()
+	student.info()
 
 ```
 
@@ -147,10 +169,85 @@ class Courses:
 	def addStudent(self, courseNum, student):
 		# If course doesn't exist... 
 		if self.db.get(courseNum) == None:
-			self.db[courseNum] = [student]
+			self.db[courseNum] = [student] # new entry in the dictionary; its value is a list
 		elif not student in self.db.get(courseNum):
 			self.db[courseNum].append(student)
 
 	def showStudentsbyCourse(self, courseNum):
+	        if self.db.get(courseNum) == None:
+	            print(f"{courseNum} is not found!")
+	        else:
+	            courseList = self.db.get(courseNum)
+	            print("Course:", courseNum)
+	            for student in courseList:
+	                student.info()
+	            print("---")
+
+
+UCSBCourses = Courses()
+
+s1 = Student("Chris Gaucho", 1234567)
+s2 = Student("Wilma Gaucho", 1234567)
+s3 = Student("Mickey Mouse", 1234567)
+
+UCSBCourses.addStudent("CS9", s1)
+UCSBCourses.addStudent("CS9", s2)
+UCSBCourses.addStudent("CS9", s3)
 
 ```
+
+Output of running this code:
+```
+>>> UCSBCourses.showStudentsbyCourse("CS8")
+CS8 is not found!
+>>> UCSBCourses.showStudentsbyCourse("CS9")
+Course: CS9
+Name Chris Gaucho
+PERM # 1234567
+Name Wilma Gaucho
+PERM # 1234567
+Name Mickey Mouse
+PERM # 1234567
+---
+```
+
+TODO: try writing a method to print all courses and their lists.
+
+
+# Exploring different errors
+
+```
+>>> UCSB.db
+{}
+
+>>> UCSB.db()
+Traceback (most recent call last):
+  File "<pyshell#6>", line 1, in <module>
+    UCSB.db()
+TypeError: 'dict' object is not callable
+```
+
+The error above reminds us that the class attributes are _variables_, which we cannot call (adding parentheses `()` tells Python that `.db()` is supposed to be a method, which it is not, hence the error that the dictionary `db` is not callable.
+
+Similarly, below is the difference between assigning the variable `UCLA` to be the class type versus calling the default constructor for that class type (by adding `()` after the class name):
+
+```
+>>> UCLA = Courses
+>>> UCLA
+<class '__main__.Courses'>
+>>> UCLA = Courses()
+>>> UCLA
+<__main__.Courses object at 0x105047f50>
+```
+
+Below is an error that we would get if we had a typo in the method name or we haven't yet defined the method.
+
+```
+>>> UCSB.addStudent("CS9", s1)
+Traceback (most recent call last):
+  File "<pyshell#5>", line 1, in <module>
+    UCSB.addStudent("CS9", s1)
+AttributeError: 'Courses' object has no attribute 'addStudent'
+```
+
+
