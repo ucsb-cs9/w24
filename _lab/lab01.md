@@ -1,7 +1,7 @@
 ---
 layout: lab
 num: lab01
-ready: false
+ready: true
 desc: "Python Classes"
 assigned: 2024-01-12 11:00:00.00-7
 due: 2024-01-22 23:59:59.59-7
@@ -48,7 +48,7 @@ In addition to your constructor, your class definition should also support "sett
 * `setGenre(self, genre)`
 * `setYear(self, year)`
 
-Each Movie object should be able to call a method `toString` that you will implement, which **returns a `str` with all the movie attributes** EXACTLY as shown (i.e., the string should contain all attributes in the following EXACT format):
+Each Movie object should be able to call a method `toString()` that you will implement, which **returns a `str` with all the movie attributes** EXACTLY as shown (i.e., the string should contain all attributes in the following EXACT format `"Title" (GENRE) - YEAR`):
 
 ```python
 movie1 = Movie("About time", "Drama", 2013)
@@ -58,7 +58,7 @@ movie2 = Movie("eternal sunshine of the spotless mind", "Sci-Fi", 2004)
 print(movie2.toString())
 ```
 
-<b>Output:</b>
+**Output:**
 
 ```
 "About Time" (DRAMA) - 2013
@@ -91,6 +91,7 @@ Your code should support the following constructor and methods:
    - The Movie `toString()` method should be used when constructing this method's return string. 
    - If no Movies of the specified genre exist in the MovieList, then this method returns an empty string (`""`). 
    -  Note: the `genre` parameter value may be in either lower / upper case.
+
 
 * `doesMovieExist(self, movie)` - Returns a Boolean `True` if the parameter `movie` (with matching title, genre, year) exists in the MovieList. Returns `False` otherwise.
 
