@@ -16,6 +16,7 @@ gauchospace_url:
 gradescope_url: https://www.gradescope.com/courses/694482
 
 github_url: https://github.com/ucsb-cs9/w24
+slides_url: https://drive.google.com/drive/folders/1hbJOKO7OPaPLbaFKxAzueFKKYDqlJqOz
 
 start_week: 1 # 0 in the Fall, when we start qtr in the middle of a week (week 0)
 start_date: 2024-01-07 00:00:00.00-7:00  # has to be a Sunday

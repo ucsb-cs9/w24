@@ -5,6 +5,7 @@ ready: true
 lecture_date: 2024-01-09 14:00:00.00-7:00
 ---
 
+[Slides folder]({{ site.slides_url }})
 
 * Course webpage: [https://ucsb-cs9.github.io/w24/](https://ucsb-cs9.github.io/w24/)
 	* Please read and understand the syllabus: [https://ucsb-cs9.github.io/w24/info/syllabus/](https://ucsb-cs9.github.io/w24/info/syllabus/)
