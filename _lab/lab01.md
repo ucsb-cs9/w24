@@ -111,6 +111,12 @@ Check that you named your file EXACTLY as was specified - remember that Python i
 
 ---
 
+`NoneType has no attribute ...`
+
+Remember that before you can use `.title()` or `.upper()` in your constructor, you need to verify that the parameter is a string instead of `None`. 
+Use the `if`/`else` branches to differentiate between these cases.
+
+---
 
 ```The autograder failed to execute correctly. Please ensure that your submission is valid. Contact your course staff for help in debugging this issue. Make sure to include a link to this page so that they can help you most effectively.```
 
