@@ -31,3 +31,6 @@ offering_links:
    - title: Calendar
      url: /info/calendar/
      description: "Assignment Calendar"
+   - title: Gradescope
+     url: {{ site.gradescope_url }}
+     description: "Assignment Submission"
