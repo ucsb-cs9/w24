@@ -111,6 +111,11 @@ Check that you named your file EXACTLY as was specified - remember that Python i
 
 ---
 
+`NoneType has no attribute title ...`
+
+In your constructor, utilize if-else statements to deal with separate cases of if the title has value or is None. Remember that calling a function on a NoneType object will throw an error.
+
+---
 
 ```The autograder failed to execute correctly. Please ensure that your submission is valid. Contact your course staff for help in debugging this issue. Make sure to include a link to this page so that they can help you most effectively.```
 
