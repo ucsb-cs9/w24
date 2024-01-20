@@ -2,19 +2,214 @@
 layout: lab
 num: lab02
 ready: false
-desc: "Coffee Shop"
-assigned: 2024-01-19 11:00:00.00-7:00
+desc: "Tea Shop"
+assigned: 2024-01-19 19:00:00.00-7:00
 due: 2024-01-29 23:59:00.00-7:00
 ---
 
-In this lab, we'll utilize inheritance functionality and define various Beverage objects and its properties. You'll have the opportunity to practice:
+# Learning Goals
+
+In this lab, we'll utilize inheritance functionality and define various Drink objects and its properties. You'll have the opportunity to practice:
 
 * Defining a base class and creating an inheritance hierarchy
 * Defining derived classes and inheriting data and reusing functionality from a base class
 * Overriding inherited methods from the parent class in the derived classes
 * Installing pytest and unit testing your code
 
-**Note: In general, it is always important to work on labs and reading early so you can gain the proper context and utilize our office hours to seek assistance / ask clarifying questions during the weekdays before the deadline if needed!**
+> Note: In general, it is always important to work on labs and reading early so you can gain the proper context and utilize our office hours to seek assistance / ask clarifying questions during the weekdays before the deadline if needed!
 
-It may be a good idea to read up on some concepts we'll be using in this lab before you get started, specifically Chapter 1.4.6.2 (Inheritance).
+It may be a good idea to read up on some concepts we'll be using in this lab before you get started, specifically **Chapter 1.4.6.2 (Inheritance)**.
 
+
+# Instructions
+
+In this lab, we will create a `Drink` base class as well as defining specific classes for a couple types of Drinks (`Tea` and `Juice`). The `DrinkOrder` class will organize Drinks and will provide a summary of a specific drink order.
+
+In addition to defining classes for various Drinks and a Drink Order, you will test your code for correctness by unit testing various scenarios using `pytest`.
+
+You will need to create five files:
+* `Drink.py` - file containing a class definition with attributes all Drinks have.
+* `Tea.py` - file containing a class definition of a tea beverage that inherits from the `Drink` class.
+* `Juice.py` - file containing a class definition of a juice beverage that inherits from the `Drink` class.
+* `DrinkOrder.py` - file containing a class definition of a customer's drink order containing various beverages.
+* `testFile.py` - file containing `pytest` functions testing the `Drink`, `Tea`, `Juice`, and `DrinkOrder` classes.
+
+There will be no starter code for this assignment, but rather the class descriptions and required methods are defined in the specification below.
+
+It's recommended that you organize your lab work in its own directory. This way all files for a lab are located in a single folder. Also, this will be easy to import various files into your code using the `import / from` technique shown in lecture.
+
+## `Drink` class
+
+The `Drink.py` file will contain the class definition of a general beverage.
+
+We will define this class' attributes as follows:
+
+* `size` - a `str` that represents the size of the beverage (`'small'`, `'medium'`, `'large'`).
+* `price` - positive `float` that represents the price of the beverage.
+
+You should write a constructor that passes in values for all the fields. You may assume calls to the constructor will always contain a non-empty `str` representing the beverage's size and a positive `float` representing the beverage's price.
+
+* `__init__(self, size, price)`
+
+In addition to your constructor, your class definition should also support "setter" and "getter" methods that can update and retrieve the state of the Drink objects:
+
+* `getSize(self)` - returns the size of the beverage
+* `getPrice(self)` - returns the price of the beverage
+* `updateSize(self, newSize)` - updates the size of the beverage
+* `updatePrice(self, newPrice)` - updates the price of the beverage
+
+Each Drink object should be able to call a method `info(self)` that you will implement, which returns a `str` with the current beverage's size and price. Since there are many beverages, the following output represents what will be returned if we call the `info` method after constructing a `Drink` object:
+
+```python
+bev1 = Drink('medium', 20.5)
+print(bev1.info())
+```
+
+<b>Output:</b>
+
+```
+medium: $20.50
+```
+
+<b>Note:</b> The `bev1.info()` return value in the example above does not contain a newline character (`\n`) at the end.
+
+<b>Tip:</b> Note that the return string should contain a price with two decimal places (as traditionally used when displaying prices). Use the f-string to show the floating point values with 2 decimal places. For example:
+
+```
+>>> price = 5
+>>> f"${price:.2f}"
+'$5.00'
+```
+
+
+## `Tea` class
+
+The `Tea.py` file will contain the class definition of a tea drink. Since a tea **IS-A** drink, it should inherit the values we defined in the `Drink` class.
+
+Your `Tea` class definition should support the following constructor and method:
+
+* `__init__(self, size, price, style)` - constructor that extends the parent class' (`Drink`) constructor and sets the style of tea (for example, Camomile, Mint, English Breakfast, etc.) as an attribute to the `Tea` class. 
+  - Note, you may assume the `style` parameter is a `str`. 
+  - In order to avoid code duplication, **you must explicitly utilize the base class' constructor to set the size and price attributes.**
+* `info(self)` - method should override the inherited `info()` method in the `Drink` class, and returns a `str` with the properties of a `Tea` object. 
+  - In order to avoid code duplication, **you must explicitly utilize the base class' `info()` method to construct the `Tea` object's information**. 
+  - An example of what the return string format of the `info()` method is shown below:
+
+```
+>>> drink1 = Tea('small', 3.0, "Camomile")
+>>> drink1.info()
+'Camomile Tea, small: $3.00'
+```
+
+<b>Note:</b> The `drink1.info()` return value in the example above does not contain a newline character (`\n`) at the end.
+
+## `Juice` class
+
+The `Juice.py` file will contain the class definition of what a juice drink will have. Since a juice **IS-A** drink, it should inherit the values we defined in the `Drink` class.
+
+Your `Juice` class definition should support the following constructor and method:
+
+* `__init__(self, size, price, ingredients)` - constructor that extends the parent class' (`Drink`) constructor and sets a list of ingredients used in this juice object. 
+  - Note, you may assume the `ingredients` parameter is a list of strings representing the types of ingredients (for example, `"tomato"`, `"orange"`, `"blueberry"`, `"guava"`, etc.) used in the juice. 
+  - In order to avoid code duplication, **you must explicitly utilize the base class' constructor to set the size and price attributes.**
+* `info(self)` - method that overrides the inherited `info` method in the `Drink` class, and returns a `str` with the properties of a `Juice` object.  - In order to avoid code duplication, **you must explicitly utilize the bass class `info()` method to construct the `Juice` object's information.** 
+  - An example of what the return string format of the `info` method is shown below:
+
+```
+>>> juice1 = Juice('large', 8.5, ["Apple", "Guava"])
+>>> juice1.info()
+"Apple/Guava Juice, 'large': $8.50"
+```
+
+<b>Note:</b> The `juice.info()` return value in the example above does not contain a newline character (`\n`) at the end.
+
+## `DrinkOrder` class
+
+The `DrinkOrder.py` file will contain the class definition of what a customer's drink order will contain, along with the total price of all beverages in the drink order.
+
+Your `DrinkOrder` class definition should support the following constructor and methods:
+
+* `__init__(self)` - constructor that initializes an empty list to the class. Name this list attribute `drinks`. This list `drinks` will eventually expand with drinks for the customer's drink order.
+* `add(self, drink)` - method that will add the drink parameter to the `DrinkOrder`'s list. The most recently added drink will be at the end of the list. You may assume the drink parameter will either be a `Juice` or `Tea` object.
+*  `total(self)` - method that will return a `str` containing each drink in the drink order, and the total price of all drinks in the drink order. An example of what the return string format of the `total` method is shown below:
+
+```python
+drink1 = Tea('small', 3.0, "Camomile")
+juice1 = Juice('large', 8.5, ["Apple", "Guava"])
+order = DrinkOrder()
+order.add(drink1)
+order.add(juice1)
+print(order.total())
+```
+
+<b>Output:</b>
+
+```
+Order Items:
+* Camomile Tea, small: $3.00
+* Apple/Guava Juice, large: $8.50
+Total Price: $11.50
+```
+
+An example of what the return string format of the `total()` method when there are no drinks in the Drink Order is shown below:
+
+```
+Order Items:
+Total Price: $0.00
+```
+
+<b>Note:</b> There is NO space after the colon on the first line, just a newline (i.e., `"Order Items:\n"`). The `order.total()` return value in the examples above do not contain a newline character (`\n`) at the end. 
+
+---
+
+# Testing your code
+
+## `testFile.py` pytests
+
+This file will contain unit tests using `pytest` to test if your functionality is correct. You should create your own tests different than the examples given in this writeup. Think of various scenarios and method calls to be certain that the state of your objects and return values are correct (provide enough tests such that all method calls in `Drink`, `Tea`, `Juice` and `DrinkOrder` are covered). Even though Gradescope will not use this file when running the automated tests, it is important to provide this file with various test cases (testing is important!!). 
+
+We will manually grade your `testFile.py` to make sure your unit tests cover the defined methods in `Drink`, `Tea`, and `Juice` and `DrinkOrder`. There are many ways to organize your test functions - our recommendation is writing a test for each class, and calling various methods to make sure the functionality and state of the objects are correct.
+
+## Installing pytest
+
+Pytest will need to be installed on your computer since it does not come with Python by default. Some links for you to use when installing pytest are:
+* Installation Guide: <https://docs.pytest.org/en/stable/getting-started.html>
+	* Note: on MacOS running Python3, try using **pip3** instead of **pip** if your installation is not working.
+* Windows Installation Guide (created by previous Learning Assistants): [Python and Pytest Installation Guide for Windows](https://drive.google.com/file/d/1nPCwIA8cBAkiJ-kOKZFjkOskD94jmWYn/view)
+	* If you have installed Python on your windows machine already without selecting `Add Python 3.x to PATH`, the easiest thing to do is uninstall / reinstall Python and be sure to select this box. 
+
+In order to run your pytests, you can navigate to your folder where your lab02 code is located with the command line interface, and run:
+
+On Mac:
+
+```
+python3 -m pytest testFile.py
+```
+
+On Windows:
+
+```
+python -m pytest testFile.py
+```
+
+* If you run into any difficulties when installing / running pytest, and/or have any questions about testing your code, we will be happy to help you out during our office / lab hours!
+
+## Submission
+
+Once you're done with writing your class definition and tests, Submit your `Drink.py`, `Tea.py`, `Juice.py`, `DrinkOrder.py`, and `testFile.py` files to the `Lab02` assignment on Gradescope. There will be various unit tests Gradescope will run to ensure your code is working correctly based on the specifications given in this lab.
+
+**Note on grading for labs with testing component:** For this lab assignment (and all lab assignments requiring a `testFile.py`), we will manually grade the tests you write. In general, your lab score will be based on the autograder's score (out of 100 points).
+
+* If you write your tests correctly according to the specifications, then you will receive 100/100 points.
+* If your written tests are missing, incomplete, or incorrect, then there will be **up to** a 10 point deduction from the autograder score. For example, if you didn't write any tests, then your lab score will be 90/100 (-10 point deduction from the autograder's score).
+
+Additionally, if the instructions are asking you to implement something in a certain way, e.g., to minimize code duplication, we might subtract points if your implementation does not follow these instructions.
+
+
+# Troubleshooting
+
+If Gradescope's tests don't pass, you may get some error message that may or may not be obvious. Don't worry - if the tests didn't pass, take a minute to think about what may have caused the error. Try to think of your pytests and see if you can write a test to help you debug the error (if you haven't already). If you're still not sure why you're getting the error, feel free to post on the forum or ask your TAs or Learning Assistants.
+
+Some of the common issues that students encountered in this lab:
+
+TBD
