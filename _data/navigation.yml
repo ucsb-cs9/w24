@@ -31,6 +31,10 @@ offering_links:
    - title: Calendar
      url: /info/calendar/
      description: "Assignment Calendar"
+# also used in _config.yml
    - title: Gradescope
-     url: {{ site.gradescope_url }}
+     url: https://www.gradescope.com/courses/694482 # {{ site.gradescope_url }}
      description: "Assignment Submission"
+   - title: Piazza
+     url: https://piazza.com/class/lr6pnwwwf0a18a
+     description: "Q&A forum"

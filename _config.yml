@@ -11,6 +11,8 @@ course: "CS 9"
 qtr: "W24"
 instructor: "Prof K" 
 quarter: "Winter 2024"
+
+# also used in _data/navigation.yml
 piazza_url: https://piazza.com/class/lr6pnwwwf0a18a
 gauchospace_url:
 gradescope_url: https://www.gradescope.com/courses/694482
