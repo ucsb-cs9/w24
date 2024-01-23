@@ -58,7 +58,7 @@ In addition to your constructor, your class definition should also support "sett
 * `updateSize(self, newSize)` - updates the size of the beverage
 * `updatePrice(self, newPrice)` - updates the price of the beverage
 
-Each Drink object should be able to call a method `info(self)` that you will implement, which returns a `str` with the current beverage's size and price. Since there are many beverages, the following output represents what will be returned if we call the `info` method after constructing a `Drink` object:
+Each Drink object should be able to call a method `info(self)` that you will implement, which **returns** a `str` with the current beverage's size and price. Since there are many beverages, the following output represents what will be returned if we call the `info` method after constructing a `Drink` object:
 
 ```python
 bev1 = Drink('medium', 20.5)
@@ -72,6 +72,8 @@ medium: $20.50
 ```
 
 <b>Note:</b> The `bev1.info()` return value in the example above does not contain a newline character (`\n`) at the end.
+
+**Note:** The quotation marks around the **returned string** in IDLE tell us that the value was returned, _not_ printed, hence the string representation is shown.
 
 <b>Tip:</b> Note that the return string should contain a price with two decimal places (as traditionally used when displaying prices). Use the f-string to show the floating point values with 2 decimal places. For example:
 
@@ -103,6 +105,8 @@ Your `Tea` class definition should support the following constructor and method:
 
 <b>Note:</b> The `drink1.info()` return value in the example above does not contain a newline character (`\n`) at the end.
 
+**Note:** The quotation marks around the **returned string** in IDLE tell us that the value was returned, _not_ printed, hence the string representation is shown.
+
 ## `Juice` class
 
 The `Juice.py` file will contain the class definition of what a juice drink will have. Since a juice **IS-A** drink, it should inherit the values we defined in the `Drink` class.
@@ -118,10 +122,12 @@ Your `Juice` class definition should support the following constructor and metho
 ```
 >>> juice1 = Juice('large', 8.5, ["Apple", "Guava"])
 >>> juice1.info()
-"Apple/Guava Juice, 'large': $8.50"
+'Apple/Guava Juice, large: $8.50'
 ```
 
-<b>Note:</b> The `juice.info()` return value in the example above does not contain a newline character (`\n`) at the end.
+<b>Note:</b> The `juice.info()` **return value** in the example above does not contain a newline character (`\n`) at the end. 
+
+**Note:** The quotation marks around the **returned string** in IDLE tell us that the value was returned, _not_ printed, hence the string representation is shown.
 
 ## `DrinkOrder` class
 
@@ -151,6 +157,8 @@ Order Items:
 Total Price: $11.50
 ```
 
+**IMPORTANT**: be careful with the string formatting in the DrinkOrder class; especially the new line character and the space after the `*` for every new order.
+
 An example of what the return string format of the `total()` method when there are no drinks in the Drink Order is shown below:
 
 ```
@@ -177,6 +185,8 @@ Pytest will need to be installed on your computer since it does not come with Py
 	* Note: on MacOS running Python3, try using **pip3** instead of **pip** if your installation is not working.
 * Windows Installation Guide (created by previous Learning Assistants): [Python and Pytest Installation Guide for Windows](https://drive.google.com/file/d/1nPCwIA8cBAkiJ-kOKZFjkOskD94jmWYn/view)
 	* If you have installed Python on your windows machine already without selecting `Add Python 3.x to PATH`, the easiest thing to do is uninstall / reinstall Python and be sure to select this box. 
+
+[Step-by-step instructions for pytest for this lab](https://docs.google.com/document/d/e/2PACX-1vTbIEpAAAYTNv-zOMx5EP5bdbw-89na8jDUlQ45DBI8q8woNr41ho_DD6a9GPJlSB1SNUpjKrLlRTGK/pub)
 
 In order to run your pytests, you can navigate to your folder where your lab02 code is located with the command line interface, and run:
 
@@ -212,4 +222,5 @@ If Gradescope's tests don't pass, you may get some error message that may or may
 
 Some of the common issues that students encountered in this lab:
 
-TBD
+* be careful with the string formatting in the DrinkOrder class; especially the new line character and the space after the `*` for every new order.
+* DrinkOrder is **not** a child class of the Drink class.
