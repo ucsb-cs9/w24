@@ -23,6 +23,7 @@ due: 2024-01-29 23:59:00.00-7:00
     * [`Tea` class](#teaclass)
     * [`Juice` class](#juiceclass)
     * [`DrinkOrder` class](#drinkorderclass)
+        * [Testing `DrinkOrder`](#testingdrinkorder)
 * [Testing your code](#testingcode)
     * `testFile.py` pytests
 * [Submission](#submission)
@@ -385,6 +386,13 @@ Total Price: $0.00
 
 <b>Note:</b> There is NO space after the colon on the first line, just a newline (i.e., `"Order Items:\n"`). The `order.total()` return value in the examples above do not contain a newline character (`\n`) at the end. 
 
+<a href="#" id="testingdrinkorder"></a>
+## Testing `DrinkOrder`
+
+How to write a correct assert statement when a method’s return value is a string that is very long and contains newlines?
+
+We have two options: see the "miscellaneous" section in the document that's linked above in Step 4. In that example, the test creates two drink orders `order1` and `order2`, which are both tested in the `TestDrinkOrder` class's `test_total()` method.
+
 ---
 
 
@@ -426,9 +434,7 @@ Some of the common issues that students encountered in this lab:
 ## Interpreting the autograder output on Gradescope
 
 If you see the error 
-```
-"The autograder failed to execute correctly. Please ensure that your submission is valid. Contact your course staff for help in debugging this issue. Make sure to include a link to this page so that they can help you most effectively."
-```
+`"The autograder failed to execute correctly. Please ensure that your submission is valid. Contact your course staff for help in debugging this issue. Make sure to include a link to this page so that they can help you most effectively."`
 Make sure to remove any `print()` statements from your code or add them in the `if __name__ == "__main__"` section.
 
 ---
