@@ -9,10 +9,10 @@ Basic Facts
 
 * **Course Web Site**: <https://ucsb-cs9.github.io/w24/>
 * **Instructor**: Prof K
-* **Lecture**: Tu Th 2pm-3:15pm (ILP ....)
+* **Lecture**: Tu Th 2pm-3:15pm (ILP 1203)
 * **TAs**:  {{site.ta_list_full}} (contact via Piazza)
 * **Mentors**: {{site.mentors_list}} (contact via Piazza)
-* **Lab** (50 minute lab sections): Wednesdays - check GOLD to see your section time 
+* **Lab** (50 minute lab sections): Wednesdays in PHELP1530 - check GOLD to see your section time 
 * **Office Hours**: See <https://ucsb-cs9.github.io/w24/info/office_hours/>
 
 # Required Resources
