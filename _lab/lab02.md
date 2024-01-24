@@ -1,7 +1,7 @@
 ---
 layout: lab
 num: lab02
-ready: false
+ready: true
 desc: "Tea Shop"
 assigned: 2024-01-19 19:00:00.00-7:00
 due: 2024-01-29 23:59:00.00-7:00
@@ -17,16 +17,17 @@ due: 2024-01-29 23:59:00.00-7:00
         * Step 3.2: Executing `testFile.py`
     * [Step 4: understand pytest output messages](#step4)
 * [Lab Instructions](#overview)
-    * [`Drink` class](#drink-class)
+    * [`Drink` class](#drinkclass)
         * Template for the `Drink` and `TestDrink` classes
         * Write tests for the `TestDrink` class
-    * [`Tea` class](#tea-class)
-    * [`Juice` class](#juice-class)
-    * [`DrinkOrder` class](#drinkorder-class)
-* [Testing your code](#testing-your-code)
+    * [`Tea` class](#teaclass)
+    * [`Juice` class](#juiceclass)
+    * [`DrinkOrder` class](#drinkorderclass)
+* [Testing your code](#testingcode)
     * `testFile.py` pytests
 * [Submission](#submission)
 * [Troubleshooting](#troubleshooting)
+    * [Interpreting the autograder output on Gradescope](#grs)
 
 <a href="#" id="goals"></a>
 # Learning Goals 
@@ -157,7 +158,7 @@ To help you organize your code and use it for reference in the future labs, we w
 For testing, you will create the `TestDrink` class in the `testFile.py`, so that you can write the tests as you are implementing the class and its methods.
 
 
-<a href="drinkclass"></a>
+<a href="#" id="drinkclass"></a>
 ## `Drink` class
 
 The `Drink.py` file will contain the class definition of a general beverage.
@@ -195,7 +196,7 @@ medium: $20.50
 
 **Note:** The quotation marks around the **returned string** in IDLE tell us that the value was returned, _not_ printed, hence the string representation is shown.
 
-<b>Tip:</b> Note that the return string should contain a price with two decimal places (as traditionally used when displaying prices). Use the f-string to show the floating point values with 2 decimal places. For example:
+<b>Hint:</b> Note that the return string should contain a price with two decimal places (as traditionally used when displaying prices). Use the f-string to show the floating point values with 2 decimal places. For example:
 
 ```
 >>> price = 5
@@ -291,7 +292,9 @@ Before submitting your code to Gradescope, run your `testFile.py` using pytest t
 
 ---
 
-<a href="teaclass"></a>
+You are now ready to implement the rest of the classes and add their tests to `testFile.py`.
+
+<a href="#" id="teaclass"></a>
 ## `Tea` class
 
 The `Tea.py` file will contain the class definition of a tea drink. Since a tea **IS-A** drink, it should inherit the values we defined in the `Drink` class.
@@ -317,7 +320,7 @@ Your `Tea` class definition should support the following constructor and method:
 
 ---
 
-<a href="juiceclass"></a>
+<a href="#" id="juiceclass"></a>
 ## `Juice` class
 
 The `Juice.py` file will contain the class definition of what a juice drink will have. Since a juice **IS-A** drink, it should inherit the values we defined in the `Drink` class.
@@ -342,7 +345,7 @@ Your `Juice` class definition should support the following constructor and metho
 
 ---
 
-<a href="drinkorderclass"></a>
+<a href="#" id="drinkorderclass"></a>
 ## `DrinkOrder` class
 
 The `DrinkOrder.py` file will contain the class definition of what a customer's drink order will contain, along with the total price of all beverages in the drink order.
@@ -417,3 +420,31 @@ Some of the common issues that students encountered in this lab:
 
 * be careful with the string formatting in the DrinkOrder class; especially the new line character and the space after the `*` for every new order.
 * DrinkOrder is **not** a child class of the Drink class.
+
+<a href="#" id="grs"></a>
+## Interpreting the autograder output on Gradescope
+
+Below is an example output for a failed test on Gradescope:
+```
+- * Berry/Grape Juice, small: $ 5.00
+?                              -
++ * Berry/Grape Juice, small: $5.00
+```
+```
+- * Chamomile, large: $4.00
++ * Chamomile Tea, large: $4.00
+?            ++++
+```
+
+* the line that starts with a `-` is the result of _your_ code
+* the line that starts with a `?` shows you where the autograder detected a difference between your result and what is expected
+  * if that line is showing a `-` it marks what needs to be _removed_ from your result 
+  * if that line is showing a `+` (in the example above, `++++`), it marks what needs to be _added_ to your result 
+* the line that starts with a `+` shows what was expected
+
+In the first case, see the hint in the instructions about the price formatting using f-strings. 
+In the second case, make sure that the `.info()` is correctly defined for the `Tea` class.
+
+
+If you run into any other issues, make a post on the forum (remember to follow the posting guidelines) or ask during the lab / office hours.
+
