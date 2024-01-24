@@ -443,7 +443,7 @@ Below is an example output for a failed test on Gradescope:
 * the line that starts with a `+` shows what was expected
 
 In the first case, see the hint in the instructions about the price formatting using f-strings. 
-In the second case, make sure that the `.info()` is correctly defined for the `Tea` class.
+In the second case, make sure that the `.info()` is correctly defined for the `DrinkOrder` class.
 
 
 If you run into any other issues, make a post on the forum (remember to follow the posting guidelines) or ask during the lab / office hours.
