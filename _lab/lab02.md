@@ -125,9 +125,10 @@ You will need to create five files:
 * `DrinkOrder.py` - file containing a class definition of a customer's drink order containing various beverages.
 * `testFile.py` - file containing `pytest` functions testing the `Drink`, `Tea`, `Juice`, and `DrinkOrder` classes.
 
-There will be no starter code for this assignment, but rather the class descriptions and required methods are defined in the specification below.
+To help you organize your code and use it for reference in the future labs, we will provide you with a template code for the `Drink` class, so that you can model the other classes accordingly.
 
-It's recommended that you organize your lab work in its own directory. This way all files for a lab are located in a single folder. Also, this will be easy to import various files into your code using the `import / from` technique shown in lecture.
+For testing, you will create the `TestDrink` class in the `testFile.py`, so that you can write the tests as you are implementing the class and its methods.
+
 
 ## `Drink` class
 
@@ -173,6 +174,61 @@ medium: $20.50
 >>> f"${price:.2f}"
 '$5.00'
 ```
+
+Below is the skeleton template for the `Drink` class that you can use as a starting point for your `Drink.py` file:
+```
+class Drink:
+    def __init__(self):
+        pass
+
+    def getSize(self):
+        pass
+
+    def getPrice(self):
+        pass
+
+    def updateSize(self):
+        pass
+
+    def updatePrice(self):
+        pass
+
+    def info(self):
+        pass
+```
+
+Immediately, we can add the corresponding test class and its testing methods to the `testFile.py` like so:
+```
+from Drink import Drink
+
+class TestDrink:
+    def test_init(self):
+        pass
+
+    def test_getSize(self):
+        pass
+
+    def test_getPrice(self):
+        pass
+
+    def test_updateSize(self):
+        pass
+
+    def test_updatePrice(self):
+        pass
+
+    def test_info(self):
+        pass
+```
+
+The way this template was created:
+- copy the stubs for the Drink class
+- add the `import` statement at the top of the file
+- change the name of the class from Drink to TestDrink
+- change the `__init__` method to be `test_init`
+- prepend `test_` to all the other methods
+
+## Write tests for the `TestDrink` class
 
 
 ## `Tea` class
