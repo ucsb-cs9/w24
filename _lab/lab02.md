@@ -20,8 +20,99 @@ In this lab, we'll utilize inheritance functionality and define various Drink ob
 
 It may be a good idea to read up on some concepts we'll be using in this lab before you get started, specifically **Chapter 1.4.6.2 (Inheritance)**.
 
+---
 
-# Instructions
+# Testing your code
+
+## Step 1: Installing pytest
+
+For this step, you will need to use the Terminal (on MacOS). See the link below for the installation instructions for Windows.
+
+Pytest will need to be installed on your computer since it does not come with Python by default. Some links for you to use when installing pytest are:
+* Installation Guide: <https://docs.pytest.org/en/stable/getting-started.html>
+	* Note: on MacOS running Python3, in the Terminal, try using **pip3** instead of **pip** if your installation is not working.
+    * If you are running into an error about pip upgrade, remember that you might need to use the **pip3** to do that: `pip3 install --upgrade pip`
+
+* Windows Installation Guide (created by previous Learning Assistants): [Python and Pytest Installation Guide for Windows](https://drive.google.com/file/d/1nPCwIA8cBAkiJ-kOKZFjkOskD94jmWYn/view)
+	* If you have installed Python on your windows machine already without selecting `Add Python 3.x to PATH`, the easiest thing to do is uninstall / reinstall Python and be sure to select this box. 
+
+
+## Step 2: Create `testFile.py`
+
+In your lab02 folder, create a file that will contain the tests for the classes from this lab and their corresponding methods.
+
+Following the Test-Driven Development (TDD), for every class that you'll write in its own file, you will create a corresonding **Test class** in the `testFile.py`. Each Test class will contain `test_` functions for the corresponding methods of that class (see examples below).
+
+Your testFile will have 2 parts: 
+1. the `import` statements at the top of the file (one for each class; `from [filename] import [classname]` substituting the correct filename and classname)
+2. the Test classes with their functions.
+
+At the moment, your `testFile.py` should be empty, saved in the lab02 folder where you will create the files for the class definitions for this lab.
+
+Your next task is to locate this lab02 folder using the Terminal (on MacOS) or Command Prompt (on Windows). 
+These two programs give us access to **command line** - an interface that allows us to run commands that interact with the operating system (OS).
+
+
+## Step 3: run `testFile.py` using `pytest`
+
+There are 2 things you need to do to run a testFile: navigation and execution.
+
+
+### Step 3.1: Navigating to the correct folder on the command Line
+
+In order to run your pytests, you can navigate to your folder where your lab02 code is located using the command line interface.
+
+If you are familiar with the Unix `cd` command: open the command line and `cd` to the lab folder.
+
+If you are not familiar with the `cd` command:
+* If you are using macOS: 
+  - copy the path to the folder that contains `testFile.py` (holding the ALT key as shown here: <https://apple.stackexchange.com/questions/317992/is-there-any-way-to-get-the-path-of-a-folder-in-macos>)
+  - open the command line (the Terminal program)
+  - type `cd`, type a space, and then paste the path that you copied. 
+    - For example, your command could look like `cd /Users/YKK/Documents/cs9/lab02`
+    - If you copied the pathname to the `testFile.py` file (instead of its folder), then just delete that file name, leaving the rest of the path
+  - press enter/return on the keyboard to run this command
+* If you are using Windows: [Windows 10 How to Open Command Prompt in Current Folder or Directory](https://www.youtube.com/watch?v=bgSSJQolR0E) (a 1min YouTube video)
+
+
+### Step 3.2: Executing `restFile.py`
+
+Execution:
+After you open the terminal and navigate to the lab folder following the steps above, type the following command to run `testFile.py` using pytest.
+
+On Mac:
+
+```
+python3 -m pytest testFile.py
+```
+
+On Windows:
+
+```
+python -m pytest testFile.py
+```
+
+If you see something like this, congratulations! You successfully installed and ran pytest.
+```
+=================== test session starts ====================
+platform darwin -- Python 3.8.0, pytest-5.3.1, py-1.8.0, pluggy-0.13.1
+rootdir: THE FOLDER YOU COPIED
+collected 0 items
+
+================== no tests ran in 0.01s ===================
+```
+
+* If you run into any difficulties when installing / running pytest, and/or have any questions about testing your code, we will be happy to help you out during our office / lab hours!
+
+## Step 4: understand pytest output messages
+
+See Step 4 in the [Step-by-step instructions for using pytest for this lab](https://docs.google.com/document/d/e/2PACX-1vTbIEpAAAYTNv-zOMx5EP5bdbw-89na8jDUlQ45DBI8q8woNr41ho_DD6a9GPJlSB1SNUpjKrLlRTGK/pub) (some of them are included below as well).
+
+
+
+---
+
+# Lab Instructions
 
 In this lab, we will create a `Drink` base class as well as defining specific classes for a couple types of Drinks (`Tea` and `Juice`). The `DrinkOrder` class will organize Drinks and will provide a summary of a specific drink order.
 
@@ -170,6 +261,8 @@ Total Price: $0.00
 
 ---
 
+<!--
+
 # Testing your code
 
 ## `testFile.py` pytests
@@ -178,31 +271,7 @@ This file will contain unit tests using `pytest` to test if your functionality i
 
 We will manually grade your `testFile.py` to make sure your unit tests cover the defined methods in `Drink`, `Tea`, and `Juice` and `DrinkOrder`. There are many ways to organize your test functions - our recommendation is writing a test for each class, and calling various methods to make sure the functionality and state of the objects are correct.
 
-## Installing pytest
-
-Pytest will need to be installed on your computer since it does not come with Python by default. Some links for you to use when installing pytest are:
-* Installation Guide: <https://docs.pytest.org/en/stable/getting-started.html>
-	* Note: on MacOS running Python3, try using **pip3** instead of **pip** if your installation is not working.
-* Windows Installation Guide (created by previous Learning Assistants): [Python and Pytest Installation Guide for Windows](https://drive.google.com/file/d/1nPCwIA8cBAkiJ-kOKZFjkOskD94jmWYn/view)
-	* If you have installed Python on your windows machine already without selecting `Add Python 3.x to PATH`, the easiest thing to do is uninstall / reinstall Python and be sure to select this box. 
-
-[Step-by-step instructions for pytest for this lab](https://docs.google.com/document/d/e/2PACX-1vTbIEpAAAYTNv-zOMx5EP5bdbw-89na8jDUlQ45DBI8q8woNr41ho_DD6a9GPJlSB1SNUpjKrLlRTGK/pub)
-
-In order to run your pytests, you can navigate to your folder where your lab02 code is located with the command line interface, and run:
-
-On Mac:
-
-```
-python3 -m pytest testFile.py
-```
-
-On Windows:
-
-```
-python -m pytest testFile.py
-```
-
-* If you run into any difficulties when installing / running pytest, and/or have any questions about testing your code, we will be happy to help you out during our office / lab hours!
+-->
 
 ## Submission
 
