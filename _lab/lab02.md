@@ -75,7 +75,7 @@ If you are not familiar with the `cd` command:
 * If you are using Windows: [Windows 10 How to Open Command Prompt in Current Folder or Directory](https://www.youtube.com/watch?v=bgSSJQolR0E) (a 1min YouTube video)
 
 
-### Step 3.2: Executing `restFile.py`
+### Step 3.2: Executing `testFile.py`
 
 Execution:
 After you open the terminal and navigate to the lab folder following the steps above, type the following command to run `testFile.py` using pytest.
@@ -175,8 +175,11 @@ medium: $20.50
 '$5.00'
 ```
 
+### Template for the `Drink` and `TestDrink` classes
+
 Below is the skeleton template for the `Drink` class that you can use as a starting point for your `Drink.py` file:
-```
+
+```python
 class Drink:
     def __init__(self):
         pass
@@ -198,7 +201,8 @@ class Drink:
 ```
 
 Immediately, we can add the corresponding test class and its testing methods to the `testFile.py` like so:
-```
+
+```python
 from Drink import Drink
 
 class TestDrink:
@@ -221,15 +225,43 @@ class TestDrink:
         pass
 ```
 
-The way this template was created:
-- copy the stubs for the Drink class
-- add the `import` statement at the top of the file
-- change the name of the class from Drink to TestDrink
+The way the `TestDrink` template was created:
+- copy the stubs for the Drink class directly
+- add the corresponding `import` statement at the top of the file
+- change the name of the class from `Drink` to `TestDrink`
 - change the `__init__` method to be `test_init`
 - prepend `test_` to all the other methods
 
 ## Write tests for the `TestDrink` class
 
+Now, inside each test function in `testFile.py`, we test each class’s methods using `assert` statements. 
+- If the method has a return value, directly assert the return value to verify its correctness; 
+- if the method doesn’t have a return value, combine it with another method that has a return value to do the testing.
+
+For example, we can use the example that we saw above, to create a sample Drink object and test that it was correctly created:
+
+```py
+
+from Drink import Drink
+
+class TestDrink:
+    def test_init(self):
+        drink = Drink('medium', 20.5)
+        assert drink.size == 'medium'
+        assert drink.price == 20.5
+```
+
+Continue in this way to test the rest of the methods of the class:
+
+```py
+    def test_getSize(self):
+        drink = Drink('large', 20.95)
+        assert drink.getSize() == 'large'
+```
+
+Before submitting your code to Gradescope, run your `testFile.py` using pytest to verify that all your tests are correct and are passing.
+
+---
 
 ## `Tea` class
 
@@ -317,17 +349,15 @@ Total Price: $0.00
 
 ---
 
-<!--
 
 # Testing your code
 
 ## `testFile.py` pytests
 
-This file will contain unit tests using `pytest` to test if your functionality is correct. You should create your own tests different than the examples given in this writeup. Think of various scenarios and method calls to be certain that the state of your objects and return values are correct (provide enough tests such that all method calls in `Drink`, `Tea`, `Juice` and `DrinkOrder` are covered). Even though Gradescope will not use this file when running the automated tests, it is important to provide this file with various test cases (testing is important!!). 
+This file will contain unit tests using `pytest` to test if your functionality is correct. You should create your own tests different than the examples given in this writeup. Think of various scenarios and method calls to be certain that the state of your objects and return values are correct (provide enough tests such that all method calls in `Drink`, `Tea`, `Juice` and `DrinkOrder` are covered). Even though Gradescope will not use this file when running the automated tests, it is important to provide this file with various test cases (testing is important!). 
 
-We will manually grade your `testFile.py` to make sure your unit tests cover the defined methods in `Drink`, `Tea`, and `Juice` and `DrinkOrder`. There are many ways to organize your test functions - our recommendation is writing a test for each class, and calling various methods to make sure the functionality and state of the objects are correct.
+We will manually grade your `testFile.py` to make sure your unit tests cover the defined methods in `Drink`, `Tea`, and `Juice` and `DrinkOrder`. 
 
--->
 
 ## Submission
 
