@@ -17,18 +17,18 @@ due: 2024-01-29 23:59:00.00-7:00
         * Step 3.2: Executing `testFile.py`
     * [Step 4: understand pytest output messages](#step4)
 * [Lab Instructions](#overview)
-    * [`Drink` class](#drinkclass)
+    * [`Drink` class](#drink-class)
         * Template for the `Drink` and `TestDrink` classes
         * Write tests for the `TestDrink` class
-    * [`Tea` class](#teaclass)
-    * [`Juice` class](#juiceclass)
-    * [`DrinkOrder` class](#drinkorderclass)
-* [Testing your code](#testingcode)
+    * [`Tea` class](#tea-class)
+    * [`Juice` class](#juice-class)
+    * [`DrinkOrder` class](#drinkorder-class)
+* [Testing your code](#testing-your-code)
     * `testFile.py` pytests
 * [Submission](#submission)
 * [Troubleshooting](#troubleshooting)
 
-<a href="goals"></a>
+<a href="#" id="goals"></a>
 # Learning Goals 
 
 In this lab, we'll utilize inheritance functionality and define various Drink objects and its properties. You'll have the opportunity to practice:
@@ -46,7 +46,7 @@ It may be a good idea to read up on some concepts we'll be using in this lab bef
 
 # Testing your code
 
-<a href="step1"></a>
+<a href="#" id="step1"></a>
 ## Step 1: Installing pytest
 
 For this step, you will need to use the Terminal (on MacOS). See the link below for the installation instructions for Windows.
@@ -60,7 +60,7 @@ Pytest will need to be installed on your computer since it does not come with Py
 	* If you have installed Python on your windows machine already without selecting `Add Python 3.x to PATH`, the easiest thing to do is uninstall / reinstall Python and be sure to select this box. 
 
 
-<a href="step2"></a>
+<a href="#" id="step2"></a>
 ## Step 2: Create `testFile.py`
 
 In your lab02 folder, create a file that will contain the tests for the classes from this lab and their corresponding methods.
@@ -77,7 +77,7 @@ Your next task is to locate this lab02 folder using the Terminal (on MacOS) or C
 These two programs give us access to **command line** - an interface that allows us to run commands that interact with the operating system (OS).
 
 
-<a href="step3"></a>
+<a href="#" id="step3"></a>
 ## Step 3: run `testFile.py` using `pytest`
 
 There are 2 things you need to do to run a testFile: navigation and execution.
@@ -129,7 +129,7 @@ collected 0 items
 
 * If you run into any difficulties when installing / running pytest, and/or have any questions about testing your code, we will be happy to help you out during our office / lab hours!
 
-<a href="step4"></a>
+<a href="#" id="step4"></a>
 ## Step 4: understand pytest output messages
 
 See Step 4 in the [Step-by-step instructions for using pytest for this lab](https://docs.google.com/document/d/e/2PACX-1vTbIEpAAAYTNv-zOMx5EP5bdbw-89na8jDUlQ45DBI8q8woNr41ho_DD6a9GPJlSB1SNUpjKrLlRTGK/pub) (some of them are included below as well).
@@ -138,7 +138,7 @@ See Step 4 in the [Step-by-step instructions for using pytest for this lab](http
 
 ---
 
-<a href="overview"></a>
+<a href="#" id="overview"></a>
 # Lab Instructions
 
 In this lab, we will create a `Drink` base class as well as defining specific classes for a couple types of Drinks (`Tea` and `Juice`). The `DrinkOrder` class will organize Drinks and will provide a summary of a specific drink order.
