@@ -421,8 +421,17 @@ Some of the common issues that students encountered in this lab:
 * be careful with the string formatting in the DrinkOrder class; especially the new line character and the space after the `*` for every new order.
 * DrinkOrder is **not** a child class of the Drink class.
 
+
 <a href="#" id="grs"></a>
 ## Interpreting the autograder output on Gradescope
+
+If you see the error 
+```
+"The autograder failed to execute correctly. Please ensure that your submission is valid. Contact your course staff for help in debugging this issue. Make sure to include a link to this page so that they can help you most effectively."
+```
+Make sure to remove any `print()` statements from your code or add them in the `if __name__ == "__main__"` section.
+
+---
 
 Below is an example output for a failed test on Gradescope:
 ```
