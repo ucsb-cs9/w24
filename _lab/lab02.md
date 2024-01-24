@@ -7,7 +7,29 @@ assigned: 2024-01-19 19:00:00.00-7:00
 due: 2024-01-29 23:59:00.00-7:00
 ---
 
-# Learning Goals
+# Table of Contents
+* [Learning Goals](#goals)
+* Testing your code
+    * [Step 1: Installing pytest](#step1)
+    * [Step 2: Create `testFile.py`](#step2)
+    * [Step 3: run `testFile.py` using `pytest`](#step3)
+        * Step 3.1: Navigating to the correct folder on the command Line
+        * Step 3.2: Executing `testFile.py`
+    * [Step 4: understand pytest output messages](#step4)
+* [Lab Instructions](#overview)
+    * [`Drink` class](#drinkclass)
+        * Template for the `Drink` and `TestDrink` classes
+        * Write tests for the `TestDrink` class
+    * [`Tea` class](#teaclass)
+    * [`Juice` class](#juiceclass)
+    * [`DrinkOrder` class](#drinkorderclass)
+* [Testing your code](#testingcode)
+    * `testFile.py` pytests
+* [Submission](#submission)
+* [Troubleshooting](#troubleshooting)
+
+<a href="goals"></a>
+# Learning Goals 
 
 In this lab, we'll utilize inheritance functionality and define various Drink objects and its properties. You'll have the opportunity to practice:
 
@@ -24,6 +46,7 @@ It may be a good idea to read up on some concepts we'll be using in this lab bef
 
 # Testing your code
 
+<a href="step1"></a>
 ## Step 1: Installing pytest
 
 For this step, you will need to use the Terminal (on MacOS). See the link below for the installation instructions for Windows.
@@ -37,6 +60,7 @@ Pytest will need to be installed on your computer since it does not come with Py
 	* If you have installed Python on your windows machine already without selecting `Add Python 3.x to PATH`, the easiest thing to do is uninstall / reinstall Python and be sure to select this box. 
 
 
+<a href="step2"></a>
 ## Step 2: Create `testFile.py`
 
 In your lab02 folder, create a file that will contain the tests for the classes from this lab and their corresponding methods.
@@ -53,6 +77,7 @@ Your next task is to locate this lab02 folder using the Terminal (on MacOS) or C
 These two programs give us access to **command line** - an interface that allows us to run commands that interact with the operating system (OS).
 
 
+<a href="step3"></a>
 ## Step 3: run `testFile.py` using `pytest`
 
 There are 2 things you need to do to run a testFile: navigation and execution.
@@ -104,6 +129,7 @@ collected 0 items
 
 * If you run into any difficulties when installing / running pytest, and/or have any questions about testing your code, we will be happy to help you out during our office / lab hours!
 
+<a href="step4"></a>
 ## Step 4: understand pytest output messages
 
 See Step 4 in the [Step-by-step instructions for using pytest for this lab](https://docs.google.com/document/d/e/2PACX-1vTbIEpAAAYTNv-zOMx5EP5bdbw-89na8jDUlQ45DBI8q8woNr41ho_DD6a9GPJlSB1SNUpjKrLlRTGK/pub) (some of them are included below as well).
@@ -112,6 +138,7 @@ See Step 4 in the [Step-by-step instructions for using pytest for this lab](http
 
 ---
 
+<a href="overview"></a>
 # Lab Instructions
 
 In this lab, we will create a `Drink` base class as well as defining specific classes for a couple types of Drinks (`Tea` and `Juice`). The `DrinkOrder` class will organize Drinks and will provide a summary of a specific drink order.
@@ -130,6 +157,7 @@ To help you organize your code and use it for reference in the future labs, we w
 For testing, you will create the `TestDrink` class in the `testFile.py`, so that you can write the tests as you are implementing the class and its methods.
 
 
+<a href="drinkclass"></a>
 ## `Drink` class
 
 The `Drink.py` file will contain the class definition of a general beverage.
@@ -232,7 +260,7 @@ The way the `TestDrink` template was created:
 - change the `__init__` method to be `test_init`
 - prepend `test_` to all the other methods
 
-## Write tests for the `TestDrink` class
+### Write tests for the `TestDrink` class
 
 Now, inside each test function in `testFile.py`, we test each class’s methods using `assert` statements. 
 - If the method has a return value, directly assert the return value to verify its correctness; 
@@ -263,6 +291,7 @@ Before submitting your code to Gradescope, run your `testFile.py` using pytest t
 
 ---
 
+<a href="teaclass"></a>
 ## `Tea` class
 
 The `Tea.py` file will contain the class definition of a tea drink. Since a tea **IS-A** drink, it should inherit the values we defined in the `Drink` class.
@@ -286,6 +315,9 @@ Your `Tea` class definition should support the following constructor and method:
 
 **Note:** The quotation marks around the **returned string** in IDLE tell us that the value was returned, _not_ printed, hence the string representation is shown.
 
+---
+
+<a href="juiceclass"></a>
 ## `Juice` class
 
 The `Juice.py` file will contain the class definition of what a juice drink will have. Since a juice **IS-A** drink, it should inherit the values we defined in the `Drink` class.
@@ -308,6 +340,9 @@ Your `Juice` class definition should support the following constructor and metho
 
 **Note:** The quotation marks around the **returned string** in IDLE tell us that the value was returned, _not_ printed, hence the string representation is shown.
 
+---
+
+<a href="drinkorderclass"></a>
 ## `DrinkOrder` class
 
 The `DrinkOrder.py` file will contain the class definition of what a customer's drink order will contain, along with the total price of all beverages in the drink order.
@@ -350,6 +385,7 @@ Total Price: $0.00
 ---
 
 
+<a href="testingcode"></a>
 # Testing your code
 
 ## `testFile.py` pytests
@@ -359,7 +395,8 @@ This file will contain unit tests using `pytest` to test if your functionality i
 We will manually grade your `testFile.py` to make sure your unit tests cover the defined methods in `Drink`, `Tea`, and `Juice` and `DrinkOrder`. 
 
 
-## Submission
+<a href="submission"></a>
+# Submission
 
 Once you're done with writing your class definition and tests, Submit your `Drink.py`, `Tea.py`, `Juice.py`, `DrinkOrder.py`, and `testFile.py` files to the `Lab02` assignment on Gradescope. There will be various unit tests Gradescope will run to ensure your code is working correctly based on the specifications given in this lab.
 
@@ -371,6 +408,7 @@ Once you're done with writing your class definition and tests, Submit your `Drin
 Additionally, if the instructions are asking you to implement something in a certain way, e.g., to minimize code duplication, we might subtract points if your implementation does not follow these instructions.
 
 
+<a href="troubleshooting"></a>
 # Troubleshooting
 
 If Gradescope's tests don't pass, you may get some error message that may or may not be obvious. Don't worry - if the tests didn't pass, take a minute to think about what may have caused the error. Try to think of your pytests and see if you can write a test to help you debug the error (if you haven't already). If you're still not sure why you're getting the error, feel free to post on the forum or ask your TAs or Learning Assistants.
