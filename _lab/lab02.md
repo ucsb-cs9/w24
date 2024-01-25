@@ -59,7 +59,8 @@ Pytest will need to be installed on your computer since it does not come with Py
     * If you are running into an error about pip upgrade, remember that you might need to use the **pip3** to do that: `pip3 install --upgrade pip`
 
 * Windows Installation Guide (created by previous Learning Assistants): [Python and Pytest Installation Guide for Windows](https://drive.google.com/file/d/1nPCwIA8cBAkiJ-kOKZFjkOskD94jmWYn/view)
-	* If you have installed Python on your windows machine already without selecting `Add Python 3.x to PATH`, the easiest thing to do is uninstall / reinstall Python and be sure to select this box. 
+	* **IMPORTANT**: when installing Python, make sure to select the checkbox to `Add Python 3.x to PATH`!
+  	* If you have installed Python on your windows machine already without selecting `Add Python 3.x to PATH`, the easiest thing to do is uninstall / reinstall Python and be sure to select this box. 
 
 
 <a href="#" id="step2"></a>
@@ -93,10 +94,11 @@ If you are familiar with the Unix `cd` command: open the command line and `cd` t
 
 If you are not familiar with the `cd` command:
 * If you are using macOS: 
-  - copy the path to the folder that contains `testFile.py` (holding the ALT key as shown here: <https://apple.stackexchange.com/questions/317992/is-there-any-way-to-get-the-path-of-a-folder-in-macos>)
+  - copy the path to the **folder** that contains `testFile.py` (holding the ALT key as shown here: <https://apple.stackexchange.com/questions/317992/is-there-any-way-to-get-the-path-of-a-folder-in-macos>)
   - open the command line (the Terminal program)
   - type `cd`, type a space, and then paste the path that you copied. 
     - For example, your command could look like `cd /Users/YKK/Documents/cs9/lab02`
+    - If any folder name in this path includes spaces (e.g., "CS 9" instead of "CS9"), then make sure to add quotation marks around it (e.g., `cd "/Users/YKK/Documents/CS 9/lab 02"`)
     - If you copied the pathname to the `testFile.py` file (instead of its folder), then just delete that file name, leaving the rest of the path
   - press enter/return on the keyboard to run this command
 * If you are using Windows: [Windows 10 How to Open Command Prompt in Current Folder or Directory](https://www.youtube.com/watch?v=bgSSJQolR0E) (a 1min YouTube video)
