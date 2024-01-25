@@ -48,7 +48,7 @@ def setSpecies(self, species):
 	self.species = species
 
 def info(self):
-	return "Species: {}, Name: {}".format(self.species, self.name)
+	return f"Species: {self.species}, Name: {self.name}"
 
 def getSound(self):
 	return "I'm an Animal!!!"
@@ -69,7 +69,7 @@ class Cow(Animal):
 
 and instantiate a specific cow:
 ```
-mycow = Cow("Cow", "Betsy")
+mycow = Cow("cow", "Betsy")
 print(mycow.info())
 mycow.setSound("Moo") # Sets a Cow sound attribute to "Moo"
 print(mycow.getSound()) # I’m an Animal!!! (calls the `Animal.getSound` method)
@@ -90,7 +90,7 @@ def getSound(self):
 * So now, cow objects will use its own version of `getSound()`, not the version that was inherited from `Animal`, as seen below:
 
 ```
-mycow = Cow("Cow", "Betsy")
+mycow = Cow("cow", "Betsy")
 mycow.setSound("Moo") # Sets a Cow sound to "Moo"
 print(mycow.getSound()) # Moo!
 ```
@@ -98,7 +98,7 @@ print(mycow.getSound()) # Moo!
 * We can still create `Animal` objects, and `Animal` objects will still use its own version of `getSound()`
 
 ```
-rarebird = Animal("Phoenix", "Zarra")
+rarebird = Animal("phoenix", "Zarra")
 print(rarebird.info())
 print(rarebird.getSound()) # I’m an Animal!!!
 ```
