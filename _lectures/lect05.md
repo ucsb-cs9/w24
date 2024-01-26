@@ -227,5 +227,5 @@ Looking at the Inheritance Hierarchy of the classes that you'll write for lab02,
 
 What about `DrinkOrder`? 
 - it is not a drink
-- the order **contains** various drinks, hence it is a **container class*
+- the order **contains** various drinks, hence it is a **container class**
 
