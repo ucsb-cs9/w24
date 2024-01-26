@@ -7,6 +7,9 @@ lecture_date: 2024-01-25 14:00:00.00-7:00
 
 [Slides folder]({{ site.slides_url }})
 
+[Recorded video](https://www.loom.com/share/e14306389a31470db833eba1752a0e4e)
+
+
 # Plan for today
 
 * Define a parent class
