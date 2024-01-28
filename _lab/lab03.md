@@ -61,7 +61,7 @@ assert reverse_str("CMPSC9") == "9CSPMC"
 
 ```
 Example test
-assert removeSubString("Lolololol", "lol") == "Loo"
+assert remove_seq("Lolololol", "lol") == "Loo"
 # The first "lol" is removed, which reduces the string 
 # to: "Loolol". Then the 2nd "lol" is removed, which 
 # reduces the string to: "Loo"
