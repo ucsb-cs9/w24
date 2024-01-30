@@ -1,7 +1,7 @@
 ---
 num: "Lecture 6"
 desc: "Pytest, Inheritance"
-ready: false
+ready: true
 lecture_date: 2024-01-25 14:00:00.00-7:00
 ---
 
@@ -40,22 +40,32 @@ For pytest:
 class Animal:
 	''' Animal class type that contains attributes for all animals '''
 
-def __init__(self, species=None, name=None):
-	self.species = species
-	self.name = name
+    def __init__(self, species=None, name=None):
+        self.species = species
+        self.name = name
 
-def setName(self, name):
-	self.name = name
+    def setName(self, name):
+        self.name = name
 
-def setSpecies(self, species):
-	self.species = species
+    def setSpecies(self, species):
+        self.species = species
 
-def info(self):
-	return f"Species: {self.species}, Name: {self.name}"
+    def info(self):
+        return f"Species: {self.species}\nName: {self.name}"
 
-def getSound(self):
-	return "I'm an Animal!!!"
+    def getSound(self):
+        return "I'm an Animal!!!"
 ```
+
+* Let's test our Animal class by creating its instance:
+
+```
+rarebird = Animal("phoenix", "Zarra")
+print(rarebird.info())
+print(rarebird.getSound()) # I’m an Animal!!!
+```
+
+## Creating a derived class
 
 * Let's define a `Cow` class that inherits from `Animal`
 
@@ -107,6 +117,29 @@ print(rarebird.getSound()) # I’m an Animal!!!
 ```
 
 <b>Note:</b> The constructed object type will dictate which method in which class is called.
-* It first looks at the <b>constructed object type</b> and checks if there is a method defined in that class. If so, it uses that method
+* It first looks at the <b>constructed object type</b> and checks if there is a method defined in that class. If so, it uses that method.
 * If the constructed object doesn’t have a method definition in its class, then it checks the immediate parent(s) it inherited from, and so on ...
-* If there is no matching method call, then an error happens
+* If there is no matching method call, then an error happens.
+
+We can build on the parent class methods and further extend them in the derived class. For example, if we wanted the cow information to include the sound string as well, we can re-use the existing info like so:
+
+```
+# in Cow class
+def info(self):
+    """ Make the default output look like:
+        ---
+        Species: None
+        Name: None
+        Sound: None
+    """
+       return f"---\n{super().info()}\nSound: {self.sound}"
+```
+
+
+### Troubleshooting
+
+If you get a `TypeError: object.__init__() takes exactly one argument (the instance to initialize)` and your `__init__()` constructor looks correct, double-check the indentation of your code: everything that belongs to the class definition needs to be indented underneath the `class` keyword.
+
+
+
+
