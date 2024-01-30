@@ -57,17 +57,66 @@ class Animal:
         return "I'm an Animal!!!"
 ```
 
-* Let's test our Animal class by creating its instance:
+* Let's test our Animal class by creating its instances:
 
 ```
-rarebird = Animal("phoenix", "Zarra")
-print(rarebird.info())
-print(rarebird.getSound()) # I’m an Animal!!!
+
+if __name__ == "__main__":
+    	pet = Animal()
+	rarebird = Animal("phoenix", "Zarra")
+	print(rarebird.info())
+	print(rarebird.getSound()) # I’m an Animal!!!
 ```
+
+## Testing the class and its methods
+
+Once we have a class and its methods, we can generate a test file by saving a copy of the class definition and changing the names of the class and the methods (as is shown in lab02 instructions):
+
+```
+from Animal import Animal
+
+class TestAnimal:
+    
+    def test__init__default(self):
+        a1 = Animal()
+        assert a1.species == None
+        assert a1.name == None
+    
+    def test__init__initialized(self):
+        a1 = Animal("bird", "Gosha")
+        assert a1.species == "bird"
+        assert a1.name == "Gosha"  
+
+    def test_setSpecies(self):
+        pass
+
+    def test_setName(self):
+        pass
+
+    def test_getSpecies(self):
+        a1 = Animal("horse", "Lala")
+        assert a1.getName() == "Lala"
+
+    def test_getName(self):
+        pass
+
+    def test_info(self):
+        pass
+
+    def test_getSound(self):
+        pass
+                
+```
+
+* Ideally, you need to create the test file as soon as you have all the stubs for the class methods
+	* create a variety of tests, thinking of potential edge cases, different ways to instantiate the class, plausible input values
+ 	* by creating the method stubs first and then writing the tests, you ensure that when you run your tests, they should all FAIL
+   	* as you begin implementing the functions, you should see your tests PASS once you have the correct implementation.
+
 
 ## Creating a derived class
 
-* Let's define a `Cow` class that inherits from `Animal`
+* Let's define a `Cow` class that inherits from the `Animal` class:
 
 ```
 # Cow.py
