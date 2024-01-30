@@ -1,8 +1,8 @@
 ---
 layout: lab
 num: lab03-practice
-ready: draft
-desc: "Recursion step-by-step"
+ready: ready
+desc: "Recursion step-by-step (optional walkthrough)"
 assigned: 2024-01-30 23:59:59.59-7
 due: 2024-02-01 23:59:59.59-7
 ---
