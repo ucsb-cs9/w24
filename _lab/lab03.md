@@ -1,16 +1,24 @@
 ---
 layout: lab
 num: lab03
-ready: draft
+ready: ready
 desc: "Recursion"
 assigned: 2024-01-26 23:59:59.59-7
 due: 2024-02-05 23:59:59.59-7
 ---
 
-In this lab, we'll practice:
+# Learning Goals
+
+In this lab, you'll practice:
 
 * Writing recursive functions based on a specification.
+  - Define a base case (or cases)
+  - Design the _next smallest input_ that would trigger a recursive case
+  - Determine the actions that need to happen in the recursive case as well as how to reduce the input to get it to trigger the base case
 * Practice writing pytests to ensure your recursive functions are correct.
+
+Before you get started, make sure to read up on recursion, specifically **Chapter 4.2**.
+
 
 # Instructions
 
@@ -70,6 +78,44 @@ assert remove_seq("Lolololol", "lol") == "Loo"
 ## `testFile.py` pytest
 
 This file will contain unit tests using pytest to test if your functionality is correct. Write your tests first in order to check the correctness of your recursive function. Again, Gradescope requires `testFile.py` to be submitted before running any autograded tests. You should write 3 - 5 tests per function.
+
+**The asserts will be marked 0 if some of the asserts in testFile.py fail.**
+
+Here's the structue for the test file that you can use to get started:
+
+```py
+# testFile.py
+
+def test_int_division():
+    # from lab03 import int_division
+    # uncomment the above import post completion of function in lab03.py
+    # write your assert statements here
+    pass # remove this after writing asserts
+
+def test_get_even_ints():
+    # from lab03 import get_even_ints
+    # uncomment the above import post completion of function in lab03.py
+    # write your assert statements here
+    pass # remove this after writing asserts
+
+def test_count_vowels():
+    # from lab03 import count_vowels
+    # uncomment the above import post completion of function in lab03.py
+    # write your assert statements here
+    pass # remove this after writing asserts
+
+def test_reverse_string():
+    # from lab03 import reverse_str
+    # uncomment the above import post completion of function in lab03.py
+    # write your assert statements here
+    pass # remove this after writing asserts
+
+def test_remove_seq():
+    # from lab03 import remove_seq
+    # uncomment the above import post completion of function in lab03.py
+    # write your assert statements here
+    pass # remove this after writing asserts
+```
 
 ## Submission
 
