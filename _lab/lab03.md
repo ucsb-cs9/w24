@@ -65,7 +65,7 @@ assert count_vowels("This Is A String") == 4
 assert reverse_str("CMPSC9") == "9CSPMC"
 ```
 
-* `remove_seq(text, seq)` - The parameters `text` and `seq` are strings that contain at least one character. This recursive function will return a string where all occurrences of `seq` are removed in the order it appears in the string `text` (see example test below for an interesting case). **Your solution SHOULD NOT use the string's `replace` method.**
+* `remove_seq(text, seq)` - The parameters `text` and `seq` are strings that contain at least one character. This recursive function will return a string where all occurrences of `seq` are removed in the order it appears in the string `text` (see example test below for an interesting case). **Your solution SHOULD NOT use the string's `replace()` or `find()` methods.**
 
 ```
 Example test
@@ -74,6 +74,17 @@ assert remove_seq("Lolololol", "lol") == "Loo"
 # to: "Loolol". Then the 2nd "lol" is removed, which 
 # reduces the string to: "Loo"
 ```
+
+**Hints**:
+Think of what your base case could be, test it - what's the simplest case where you don't need to do any work? 
+- use sample short strings to figure out what the algorithm should be
+- try strings that contain and do not contain the sequence that needs to be replaced and see what actions need to take place in each case.
+
+Which one of these cases would trigger your base case? 
+- `text = 'abc', seq = 'b'`
+- `text = 'acb', seq = 'ab'`
+- `text = 'ab', seq = 'abc'`
+
 
 ## `testFile.py` pytest
 
@@ -122,3 +133,17 @@ def test_remove_seq():
 Once you're done with writing your recursive function definitions and tests, submit your `lab03.py` and `testFile.py` files to the `Lab03` assignment on Gradescope. There will be various unit tests Gradescope will run to ensure your code is working correctly based on the specifications given in this lab.
 
 If the tests don't pass, you may get some error message that may or may not be obvious at this point. Don't worry - if the tests didn't pass, take a minute to think about what may have caused the error. If your tests didn't pass and you're still not sure why you're getting the error, feel free to ask your TAs or Learning Assistants.
+
+
+# Troubleshooting
+
+`RecursionError: maximum recursion depth exceeded while calling a Python object`
+
+If you are getting the error above, check:
+- is your base case is correct? do you have all necesary base cases?
+- is your recursive function called with an input _that gets closer_ to the base case?
+- are all braches of your function returning the correct result? (walk through different example inputs using Python Tutor, if necessary)
+
+---
+
+
