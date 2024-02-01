@@ -65,7 +65,7 @@ assert count_vowels("This Is A String") == 4
 assert reverse_str("CMPSC9") == "9CSPMC"
 ```
 
-* `remove_seq(text, seq)` - The parameters `text` and `seq` are strings that contain at least one character. This recursive function will return a string where all occurrences of `seq` are removed in the order it appears in the string `text` (see example test below for an interesting case). **Your solution SHOULD NOT use the string's `replace()` or `find()` methods.**
+* `remove_seq(text, seq)` - The parameters `text` and `seq` are strings that contain at least one character. This recursive function will return a string where all occurrences of `seq` are removed in the order it appears in the string `text` (see example test below for an interesting case). **Your solution SHOULD NOT use the string's `replace()`, `index()` or `find()` methods.**
 
 ```
 Example test
