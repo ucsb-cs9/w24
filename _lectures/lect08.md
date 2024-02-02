@@ -1,8 +1,8 @@
 ---
-num: "Lecture 7"
-desc: "Algorithm Analysis, Recursion"
+num: "Lecture 8"
+desc: "Algorithm Analysis, Python List and Dictionary"
 ready: true
-lecture_date: 2024-01-30 14:00:00.00-7:00
+lecture_date: 2024-02-01 14:00:00.00-7:00
 ---
 
 [Slides folder]({{ site.slides_url }})
