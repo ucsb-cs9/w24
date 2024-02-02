@@ -1,7 +1,7 @@
 ---
 num: "Lecture 4"
 desc: "Container Classes and Errors"
-ready: false
+ready: true
 lecture_date: 2024-01-18 14:00:00.00-7:00
 ---
 

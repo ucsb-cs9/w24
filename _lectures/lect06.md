@@ -62,7 +62,7 @@ class Animal:
 ```
 
 if __name__ == "__main__":
-    	pet = Animal()
+    pet = Animal()
 	rarebird = Animal("phoenix", "Zarra")
 	print(rarebird.info())
 	print(rarebird.getSound()) # I’m an Animal!!!
