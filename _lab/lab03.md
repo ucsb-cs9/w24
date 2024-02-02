@@ -1,7 +1,7 @@
 ---
 layout: lab
 num: lab03
-ready: ready
+ready: true
 desc: "Recursion"
 assigned: 2024-01-26 23:59:59.59-7
 due: 2024-02-05 23:59:59.59-7
@@ -74,6 +74,8 @@ assert remove_seq("Lolololol", "lol") == "Loo"
 # to: "Loolol". Then the 2nd "lol" is removed, which 
 # reduces the string to: "Loo"
 ```
+The fact that we are removing the occurences of the `seq` _in the order they appear_, means that in this function, we are not going back to recheck that we introduced a new `seq` in the earlier part of the string by removing its occurrence later.
+Here, we are assuming that the following function call `remove_seq("ababcc", "abc")` will return `'abc'`, not an empty string. (_You can challenge yourself to see how your function needs to be modified to handle it recursively, but this is not part of this lab._)
 
 **Hints**:
 Think of what your base case could be, test it - what's the simplest case where you don't need to do any work? 
