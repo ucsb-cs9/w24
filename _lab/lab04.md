@@ -61,7 +61,7 @@ _In the above example, `G` is located at `maze[0][4]`, so `maze[0]` contains the
 
 If you would like to review Python 2D Lists, you may find the following CS 8 notes useful: <https://ucsb-cs8.github.io/m19-wang/lectures/lect10/>
 
-**Note:** This layout is different than a traditional cartesian coordinate system. As we move right the y value increases, as we move left the y value decreases, as we move up the x value decreases, and as we move down the x value increases.
+**Note: This layout is different than a traditional cartesian coordinate system. As we move right the y value increases, as we move left the y value decreases, as we move up the x value decreases, and as we move down the x value increases.**
 
 The initial maze element can have one of three states:
 
@@ -69,7 +69,7 @@ The initial maze element can have one of three states:
 * `'+'` - a wall. This indicates that you cannot move into this position.
 * `'G'` - a goal. We are trying to see if a path exists to this position.
 
-**Also Note:** You may assume that a maze will always be enclosed with a border (`'+'`) or the Goal (`'G'`) - there won't be any open spaces along the borders of the maze.
+**Also Note: You may assume that a maze will always be enclosed with a border (`'+'`) or the Goal (`'G'`) - there won't be any open spaces along the borders of the maze.**
 
 ## Traversing the maze
 
@@ -85,7 +85,7 @@ You may traverse the spaces horizontally and vertically (not diagonally).
 * When reaching a certain coordinate, you must check and move **counterclockwise** in the following order: **North, then West, then South, then East**
 * You will always be given a starting coordinate. This will be the first step taken by the function.
 * You will traverse the maze until you reach a goal (`'G'`). Once you reach the goal, your algorithm can stop (no need to keep traversing the maze)
-	* **Note:** in the edge case where the current position is next to the goal, your function should always attempt to move into the space **before** it checks to see if the position stepped into is the goal.
+	* **Note: in the edge case where the current position is next to the goal, your function should always attempt to move into the space _before_ it checks to see if the position stepped into is the goal.**
 
 Using the maze provided above, let's assume your starting position is at `maze[4][4]`. After your algorithm finshes, `maze` will have the following updates containing the number of steps:
 
@@ -132,7 +132,7 @@ And we can print the maze after our algorithm runs in the following format:
 
 Note that our starting coordinate (`maze[4][4]`) is the first step we take (and mark the grid with a 1). Then it traverses North (step 2) until it can't go any further. For example, in step 2's position (at coordinate `maze[3][4]`), it tries to check North (runs into a wall), then West (runs into a wall), then South (already visited), then East (runs into a wall), so we can't continue. At this point, we need to "backtrack" to step 1 and check the other counterclockwise directions of `maze[4][4]`, so at step 1 it tries to go North (already visited as indicated with step 2), then West, which is open (can continue, so now it takes the 3rd step), and so on. 
 
-**Note** that `'G'` or `'+'` should never be overwritten when traversing the maze.
+**Note that `'G'` or `'+'` should never be overwritten when traversing the maze.**
 
 ## Utilizing a Stack to keep track of where we've visited
 
@@ -187,3 +187,77 @@ Once you're done with writing your class / function definitions and tests, submi
 Also, double-check and remove any print statements in your submission. Sometimes print statements confuses the autograder and may result in an error message.
 
 If the tests don't pass, you may get some error message that may or may not be obvious at this point. Don't worry - if the tests didn't pass, take a minute to think about what may have caused the error. If your tests didn't pass and you're still not sure why you're getting the error, feel free to ask your TAs or Learning Assistants.
+
+
+---
+
+# Step-by-Step Traversal of the Maze
+
+```
+To illustrate how our given algorithm works, let's see the following example:
+
+Let's say the starting maze and stack looks like this: (first step already taken)
+
+[
+	['+', '+', '+', '+', 'G', '+']                  |   |
+	['+', ' ', '+', ' ', ' ', '+']                  |   |
+	['+', ' ', ' ', ' ', '+', '+']                  |   |
+	['+', ' ', '+', '+', ' ', '+']                  |   |
+	['+', ' ', ' ', ' ',  1 , '+'] <- now at 1      |4,4| <- keep track of where we are
+	['+', '+', '+', '+', '+', '+']                  |---|
+]
+For each step, we check the 4 directions (north, west, south, east) one by one to see if there is a valid slot to move.
+
+[
+	['+', '+', '+', '+', 'G', '+']                  |   |
+	['+', ' ', '+', ' ', ' ', '+']                  |   |
+	['+', ' ', ' ', ' ', '+', '+']                  |   |
+	['+', ' ', '+', '+',    , '+'] <- north good    |   |
+	['+', ' ', ' ', ' ',  1 , '+']                  |4,4|
+	['+', '+', '+', '+', '+', '+']                  |---|
+]
+Since north is valid, we take a step to the north and update the maze and the stack accordingly:
+
+[
+	['+', '+', '+', '+', 'G', '+']                  |   |
+	['+', ' ', '+', ' ', ' ', '+']                  |   |
+	['+', ' ', ' ', ' ', '+', '+']                  |   |
+	['+', ' ', '+', '+',  2 , '+'] <- now at 2      |3,4| <- keep track of where we are
+	['+', ' ', ' ', ' ',  1 , '+']                  |4,4|
+	['+', '+', '+', '+', '+', '+']                  |---|
+]
+Now, start from 2, we check the 4 directions (North, West, South, Eastt) one by one to see if there is a valid slot to move.
+
+[
+	['+', '+', '+', '+', 'G', '+']                  |   |
+	['+', ' ', '+', ' ', ' ', '+']                  |   |
+	['+', ' ', ' ', ' ', '+', '+']                  |   |
+	['+', ' ', '+', '+',  2 , '+'] <- NWSE blocked  |3,4|
+	['+', ' ', ' ', ' ',  1 , '+']                  |4,4|
+	['+', '+', '+', '+', '+', '+']                  |---|
+]
+When all 4 directions NWSE are blocked, we take a step back by popping the stack:
+
+[
+	['+', '+', '+', '+', 'G', '+']                  |   |
+	['+', ' ', '+', ' ', ' ', '+']                  |   |
+	['+', ' ', ' ', ' ', '+', '+']                  |   |
+	['+', ' ', '+', '+',  2 , '+']                  |   | <- pop
+	['+', ' ', ' ', ' ',  1 , '+'] <- back to 1     |4,4| <- where to go back
+	['+', '+', '+', '+', '+', '+']                  |---|
+]
+Start from 1, again, we check the 4 directions (north, west, south, east) one by one to see if there is a valid slot to move.
+
+we check the north (this time occupied), then the west, and since the west is valid, we go west:
+
+[
+	['+', '+', '+', '+', 'G', '+']                  |   |
+	['+', ' ', '+', ' ', ' ', '+']                  |   |
+	['+', ' ', ' ', ' ', '+', '+']                  |   |
+	['+', ' ', '+', '+',  2 , '+']                  |4,3| <- keep track of where we are
+	['+', ' ', ' ',  3 ,  1 , '+'] <- now at 3      |4,4|
+	['+', '+', '+', '+', '+', '+']                  |---|
+]
+The algorithm given is straightforward, and all you need to do is translate this procedure into python code. My suggestion is reading the lab description carefully. It indeed contains all you need.
+
+```
