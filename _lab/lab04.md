@@ -35,7 +35,7 @@ It's recommended that you organize your lab work in its own directory. This way,
 
 We can explore and solve a maze by utilizing a Stack data structure. The idea is: given coordinates (x,y positions), we can explore the maze in different directions until we reach dead-ends or our goal. If we do reach a dead-end, a Stack data structure can help us keep track of coordinates we've visited and allow us to "backtrack" to a certain point.
 
-More context on this specific problem is covered in the book (See **Recursion Chapter 4.6: Exploring a Maze**). The book explains how this problem can be solved recursively, but in this lab we will not use recursion - rather we will do what recursion does for us and manually keep track of positions visited using our implementation of a Stack data structure.
+More context on this specific problem is covered in the book (See **Recursion Chapter 4.6: Exploring a Maze**, or [5.11 in the online book](https://runestone.academy/ns/books/published/pythonds/Recursion/ExploringaMaze.html)). The book explains how this problem can be solved recursively, but in this lab we will not use recursion - rather we will do what recursion does for us and manually keep track of positions visited using our implementation of a Stack data structure.
 
 ## Representing a maze
 
