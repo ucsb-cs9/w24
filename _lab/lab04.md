@@ -4,7 +4,7 @@ num: lab04
 ready: true
 desc: "Maze Solver using Stacks"
 assigned: 2024-02-02 23:59:59.59-7
-due: 2024-02-12 23:59:59.59-7
+due: 2024-02-13 23:59:59.59-7
 ---
 
 # Learning Goals
@@ -258,6 +258,10 @@ we check the north (this time occupied), then the west, and since the west is va
 	['+', ' ', ' ',  3 ,  1 , '+'] <- now at 3      |4,4|
 	['+', '+', '+', '+', '+', '+']                  |---|
 ]
+```
+
 The algorithm given is straightforward, and all you need to do is translate this procedure into python code. My suggestion is reading the lab description carefully. It indeed contains all you need.
 
-```
+If you'd like an additional walkthrough, here's a handwritten explanation of the various elements you will need to solve this lab:
+<https://www.loom.com/share/b3323f2125d447dcbc7d18b96e45dda4?sid=092fe2c5-cf90-48fa-ae40-ead8c12c86c7>
+
