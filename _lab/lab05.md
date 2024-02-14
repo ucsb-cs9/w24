@@ -25,7 +25,7 @@ This lab will require you to define classes for a `Book`, `BookCollection`, and 
 You will need to create four files:
 * `Book.py` - file containing a class definition for a Book object
 * `BookCollection.py` - file containing a class definition for a collection of Books that will be implemented as an Ordered Linked List
-* `BookCollectionNode` - file containing a class definition for a Node in the BookCollection
+* `BookCollectionNode.py` - file containing a class definition for a Node in the BookCollection
 * `testFile.py` - file containing pytest functions testing the overall correctness of your class definitions
 
 There will be no starter code for this assignment, but rather the class descriptions and required methods are defined in the specification below.
