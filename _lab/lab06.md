@@ -72,7 +72,7 @@ print(a0.get_apartment_details())
 (Apartment) Rent: $1204, Distance From UCSB: 200m, Condition: bad
 ```
 
-* Lastly, your `Apartment` class should overload the `>`,`<`, and `==` operators. This will be used when finding the proper position of an Apartment in the list using the specifications in the **Introduction** section of this lab. In this context for example, the `<` operator will return True for `Apartment1 < Apartment2` if Apartment1 is **better than** Apartment2. We reviewed operator overloading in class and the textbook does discuss overloading Python operators. You can also refer to this reference on overloading various operators as well:
+* Lastly, your `Apartment` class should overload the `>`,`<`, and `==` operators. This will be used when finding the proper position of an Apartment in the list using the specifications in the **Introduction** (first by rent, then distance and then condition) section of this lab. In this context for example, the `<` operator will return True for `Apartment1 < Apartment2` if Apartment1 is **better than** Apartment2. We reviewed operator overloading in class and the textbook does discuss overloading Python operators. You can also refer to this reference on overloading various operators as well:
 
 [https://www.geeksforgeeks.org/operator-overloading-in-python/](https://www.geeksforgeeks.org/operator-overloading-in-python/)
 
@@ -83,9 +83,10 @@ This file will contain functions that sort a list of Apartment objects, ensures 
 
 * `merge_sort(apartmentList)` - Performs a mergesort on the apartmentList passed as input. Sorts the Apartment objects based on the specifications in the **Introduction** section of this lab. **Gradescope will test to ensure that your mergesort implementation's Big-O is O(NlogN)**. You may refer to the implementation given in the textbook.
 * `ensure_sorted_ascending(apartmentList)` - method that returns a boolean value. True if the apartmentList is sorted correctly in asending order. False otherwise.
-* `get_best_apartment(apartmentList)` - method that returns a string detailing the **best** Apartment's rent, meters from UCSB, and condition. Make use of `getApartmentDetails(self)` and `merge_sort(apartmentList)`. You can assume that apartmentList has at least one apartment. 
-* `get_worst_apartment(apartmentList)` - method that returns a string detailing the **worst** Apartment's rent, meters from UCSB, and condition. Make use of `getApartmentDetails(self)` and `merge_sort(apartmentList)`. You can assume that apartmentList has at least one apartment. 
-* `get_affordable_apartments(apartmentList, budget)` - method that returns a labeled, newline separated string detailing the rent, meters from UCSB, and condition of **all** the apartments **whose rent is less than or equal to `budget`** from the apartmentList **in sorted order**. Make use of *getApartmentDetails(self)* and *mergesort(apartmentList)*. You can assume that apartmentList has at least one apartment and that there is no newline at the end of the string returned by this method. If there are no apartments that are affordable in the apartmentList, this method returns an empty string.
+* `get_best_apartment(apartmentList)` - method that returns a string detailing the **best** Apartment's rent, meters from UCSB, and condition. Make use of `get_apartment_details(self)` and `merge_sort(apartmentList)`. You can assume that apartmentList has at least one apartment. 
+* `get_worst_apartment(apartmentList)` - method that returns a string detailing the **worst** Apartment's rent, meters from UCSB, and condition. Make use of `get_apartment_details(self)` and `merge_sort(apartmentList)`. You can assume that apartmentList has at least one apartment. 
+* `get_affordable_apartments(apartmentList, budget)` - method that returns a labeled, newline separated string detailing the rent, meters from UCSB, and condition of **all** the apartments **whose rent is less than or equal to `budget`** from the apartmentList **in sorted order**. Make use of *get_apartment_details(self)* and *merge_sort(apartmentList)*. 
+**Note:** You can assume that apartmentList has at least one apartment and that there is no newline at the end of the string returned by this method. If there are no apartments that are affordable in the apartmentList, this method returns an empty string.
 
 # Sample Output 1
 
@@ -222,4 +223,4 @@ Once you're done with writing your recursive function definitions and tests, sub
 
 If the tests don't pass, you may get some error message that may or may not be obvious at this point. Don't worry - if the tests didn't pass, take a minute to think about what may have caused the error. If your tests didn't pass and you're still not sure why you're getting the error, feel free to ask your TAs or Learning Assistants.
 
-<sup>* Lab06 created by Gautam Mundewadi and adapted / updated by Richert Wang (F23)</sup>
+<sup>* Lab06 created by Gautam Mundewadi and adapted / updated by Prof K (W24)</sup>
