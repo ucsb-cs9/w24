@@ -72,7 +72,7 @@ print(a0.get_apartment_details())
 (Apartment) Rent: $1204, Distance From UCSB: 200m, Condition: bad
 ```
 
-* Lastly, your `Apartment` class should overload the `>`,`<`, and `==` operators. This will be used when finding the proper position of an Apartment in the list using the specifications in the **Introduction** (first by rent, then distance and then condition) section of this lab. In this context for example, the `<` operator will return True for `Apartment1 < Apartment2` if Apartment1 is **better than** Apartment2. We reviewed operator overloading in class and the textbook does discuss overloading Python operators. You can also refer to this reference on overloading various operators as well:
+* Lastly, your `Apartment` class should overload the `>`,`<`, and `==` operators. This will be used when finding the proper position of an Apartment in the list using the specifications (first by rent, then distance and then condition) in the **Introduction** section of this lab. In this context for example, the `<` operator will return True for `Apartment1 < Apartment2` if Apartment1 is **better than** Apartment2. We reviewed operator overloading in class and the textbook does discuss overloading Python operators. You can also refer to this reference on overloading various operators as well:
 
 [https://www.geeksforgeeks.org/operator-overloading-in-python/](https://www.geeksforgeeks.org/operator-overloading-in-python/)
 
@@ -223,4 +223,4 @@ Once you're done with writing your recursive function definitions and tests, sub
 
 If the tests don't pass, you may get some error message that may or may not be obvious at this point. Don't worry - if the tests didn't pass, take a minute to think about what may have caused the error. If your tests didn't pass and you're still not sure why you're getting the error, feel free to ask your TAs or Learning Assistants.
 
-<sup>* Lab06 created by Gautam Mundewadi and adapted / updated by Prof K (W24)</sup>
+<sup>* Lab06 created by Gautam Mundewadi and adapted / updated by Richert Wang (F23) and Prof K (W24)</sup>
