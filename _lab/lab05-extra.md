@@ -1,10 +1,10 @@
 ---
 layout: lab
-num: lab05.1
+num: extra-credit
 ready: true
 desc: "Extra credit lab (Queues)"
 assigned: 2024-02-15 11:00:00.00-7
-due: 2024-03-03 23:59:59.59-7
+due: 2024-03-04 23:59:59.59-7
 ---
 
 # Introduction
