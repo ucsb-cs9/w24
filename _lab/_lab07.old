@@ -2,10 +2,12 @@
 layout: lab
 num: lab07
 ready: draft
-desc: "Salad Time!"
+desc: "Soup or Salad?"
 assigned: 2024-02-23 23:59:59.59-7
 due: 2024-03-4 23:59:59.59-7
 ---
+
+# Learning Goals
 
 In this lab, we will utilize many concepts covered in the course so far including:
 
@@ -69,51 +71,51 @@ The price of a CustomSalad is defined by two things:
 1. the size of the salad
 2. the number of toppings the salad will have (assuming no toppings, it is a simple salad). CustomSalads will have the following fixed prices based on its size:
 
-* Small (S): $8.00
-* Medium (M): $10.00
-* Large (L): $12.00
+* Small (S): $8.75
+* Medium (M): $10.75
+* Large (L): $12.75
 
 The size of the salad also dictates the amount each additional topping will cost based on the following definition:
 
-* Small (S): + $0.50 per additional topping
-* Medium (M): + $0.75 per additional topping
-* Large (L): + $1.00 per additional topping
+* Small (S): + $1.75 per additional topping
+* Medium (M): + $2.50 per additional topping
+* Large (L): + $3.00 per additional topping
 
-Since we now know what the price of a salad should be based on the size, the `CustomSalad` constructor should determine the base price of the salad and set it appropriately (remember, no need to write it in this class if we already have the method in `Salad.py`).
+Since we now know that the price of a salad should be based on the size, the `CustomSalad` constructor should determine the base price of the salad and set it appropriately (remember, no need to write it in this class if we already have the method in `Salad.py`).
 
 * `__init__(self, size)`
 
 There are two more methods this class should support:
 
 * `add_topping(self, topping)` - this method will add to the toppings list and update its price appropriately. The topping parameter is represented as a `str` type
-* `get_salad_details(self)` - this method will construct and return a string containing the details of the `CustomSalad` object including the size, toppings, and price of the `CustomSalad`. An example (with escape characters shown for formatting) is given below. When constructing your string, please follow the **EXACT** format since this is what Gradescope will expect
+* `get_salad_details(self)` - this method will construct and return a string containing the details of the `CustomSalad` object including the size, toppings, and price of the `CustomSalad`. An example (with escape characters shown for formatting) is given below. When constructing your string, please follow the **EXACT** format since this is what Gradescope will expect.
 
 `CustomSalad` without toppings example:
 
 ```python
-cp1 = CustomSalad("S")
+cs1 = CustomSalad("S")
 
-assert cp1.get_salad_details() == \
+assert cs1.get_salad_details() == \
 "CUSTOM SALAD\n\
 Size: S\n\
 Toppings:\n\
-Price: $8.00\n"
+Price: $8.75\n"
 ```
 
 `CustomSalad` with a list of toppings example (note that each topping will be indented with a tab):
 
 ```python
-cp1 = CustomSalad("L")
-cp1.add_topping("chicken")
-cp1.add_topping("cucumbers")
+cs1 = CustomSalad("L")
+cs1.add_topping("chicken")
+cs1.add_topping("cucumbers")
 
-assert cp1.get_salad_details() == \
+assert cs1.get_salad_details() == \
 "CUSTOM SALAD\n\
 Size: L\n\
 Toppings:\n\
 \t+ chicken\n\
 \t+ cucumbers\n\
-Price: $14.00\n"
+Price: $18.75\n"
 ```
 
 ## SpecialtySalad.py
@@ -123,31 +125,31 @@ A `SpecialtySalad` class definition will exist in `SpecialtySalad.py`. Similar t
 
 Also similar to the `CustomSalad` class, `SpecialtySalad` will use the size to set its price appropriately. The price of a `SpecialtySalad` is defined as follows:
 
-* Small (S): $12.00
-* Medium (M): $14.00
-* Large (L): $16.00
+* Small (S): $12.50
+* Medium (M): $14.50
+* Large (L): $16.50
 
 Unlike custom salads, specialty salads do not have a list of toppings associated with it, but do have a unique name that will be displayed when getting details for this salad. This class should also have its own `get_salad_details` method described below:
 
-* `get_salad_details(self)` - this method will construct and return a string containing the details of the `SpecialtySalad` object including the size and name of the `SpecialtySalad`. An example (with escape characters shown for formatting) is given below. When constructing your string, please follow the **EXACT** format since this is what Gradescope will expect
+* `get_salad_details(self)` - this method will construct and return a string containing the details of the `SpecialtySalad` object including the size and name of the `SpecialtySalad`. An example (with escape characters shown for formatting) is given below. When constructing your string, please follow the **EXACT** format since this is what Gradescope will expect.
 
 A sample output test for `get_salad_details()`:
 
 ```python
-sp1 = SpecialtySalad("S", "Cobb")
-assert sp1.getSaladDetails() == \
+ss1 = SpecialtySalad("S", "Cobb")
+assert ss1.getSaladDetails() == \
 "SPECIALTY SALAD\n\
 Size: S\n\
 Name: Cobb\n\
-Price: $12.00\n"
+Price: $12.50\n"
 ```
 
 # SaladOrder.py
 
-The `SaladOrder` class will be defined in `SaladOrder.py`. This class will keep track of various salads for single order. The `SaladOrder` class will have the following attributes:
+The `SaladOrder` class will be defined in `SaladOrder.py`. This class will keep track of various salads for a single order. The `SaladOrder` class will have the following attributes:
 
-* `salads` - a Python List containing all the salads that the single order contains. This can be initially set to an empty list
-* `time` - an int representing the expected time the order will be picked up. This field is what will be used in determining the *priority of orders*. So it is possible for an early order to be deprioritized based on when the salad is expected to be ready
+* `salads` - a Python List containing all the salads that the single order contains. This can be initially set to an empty list.
+* `time` - an int representing the expected time the order will be picked up. This field will be used in determining the *priority of orders*. So it is possible for an early order to be deprioritized based on when the salad is expected to be ready.
 
 The constructor for a `SaladOrder` will take in the expected time that order should be ready:
 
@@ -167,38 +169,38 @@ In addition to the constructor, getters / setters for the time attribute, the ab
 * `get_time(self)`
 * `set_time(self, time)`
 * `add_salad(self, salad)` - will add the Salad object to the end of the Python List
-* `get_order_description(self)` - constructs and returns a string containing the time of the order, all information for each salad in the order, as well as the total order price. Since we're storing various Salad objects in this class, we can utilize polymorphism and simply call the `get_salad_details()` method on the Salad objects when constructing the string for our entire order, as well as `get_price()` to compute the `SaladOrder` total price
+* `info(self)` - constructs and returns a string containing the time of the order, all information for each salad in the order, as well as the total order price. Since we're storing various Salad objects in this class, we can utilize polymorphism and simply call the `get_salad_details()` method on the Salad objects when constructing the string for our entire order, as well as `get_price()` to compute the `SaladOrder` total price
 
-An example of the `get_order_description()` string format is given below:
+An example of the `info()` string format is given below:
 
 ```python
-cp1 = CustomSalad("S")
-cp1.add_topping("chicken")
-cp1.add_topping("cucumber")
-sp1 = SpecialtySalad("S", "Cobb")
+cs1 = CustomSalad("S")
+cs1.add_topping("chicken")
+cs1.add_topping("cucumber")
+ss1 = SpecialtySalad("S", "Cobb")
 order = SaladOrder(123000) #12:30:00PM
-order.add_salad(cp1)
-order.add_salad(sp1)
+order.add_salad(cs1)
+order.add_salad(ss1)
 
-assert order.get_order_description() == \
-"******\n\
+assert order.info() == \
+"***\n\
 Order Time: 123000\n\
 CUSTOM SALAD\n\
 Size: S\n\
 Toppings:\n\
 \t+ chicken\n\
 \t+ cucumber\n\
-Price: $9.00\n\
+Price: $12.25\n\
 \n\
 ----\n\
 SPECIALTY SALAD\n\
 Size: S\n\
 Name: Cobb\n\
-Price: $12.00\n\
+Price: $12.50\n\
 \n\
 ----\n\
-TOTAL ORDER PRICE: $21.00\n\
-******\n"
+TOTAL ORDER PRICE: $24.75\n\
+***\n"
 ```
 
 # OrderQueue.py
@@ -214,7 +216,7 @@ In addition to the construction of the MinHeap in this class, two methods are re
 * `add_order(self, saladOrder)` - a `saladOrder` object will be stored in the MinHeap *prioritized by its time attribute* (lower value means higher priority)
 * `process_next_order(self)` - this removes the root node from the MinHeap (and restructures the MinHeap), and returns a string containing the root value's salad order description
 
-The automated tests will create various salad orders with different time attributes. It will then call processNextOrder one at a time and check the removed SaladOrder is in the right priority by checking their expected `get_orderD_description()` string. You should write similar tests to confirm the MinHeap state is in the correct order.
+The automated tests will create various salad orders with different time attributes. It will then call `process_next_order()` one at a time and check the removed SaladOrder is in the right priority by checking their expected `info()` string. You should write similar tests to confirm the MinHeap state is in the correct order.
 
 # testFile.py
 
@@ -236,3 +238,8 @@ Once you're done with writing your class definitions and tests, submit the follo
 There will be various unit tests Gradescope will run to ensure your code is working correctly based on the specifications given in this lab.
 
 If the tests don't pass, you may get some error message that may or may not be obvious at this point. Don't worry - if the tests didn't pass, take a minute to think about what may have caused the error. If your tests didn't pass and you're still not sure why you're getting the error, feel free to ask your TAs or Learning Assistants.
+
+# Troubleshooting
+
+TBA
+

@@ -34,7 +34,7 @@ cal_dates: >
     {"label":"Holiday: Presidents' Day",  "date":"2024-02-19" },
     {"label":"W24 deadline to drop courses", "date":"2024-02-05" },
     {"label":"W24 CS 9 MIDTERM", "date":"2024-02-08" },
-    {"label":"W24 CS 9 FINAL (4:00pm - 7:00pm)", "date":"2024-03-19" },
+    {"label":"W24 CS 9 FINAL (4:00pm - 6:00pm)", "date":"2024-03-19" },
     {"label":"W24 instruction ends", "date":"2024-03-15" },
     {"label":"W24 qtr ends", "date":"2024-03-22" }
   ]
