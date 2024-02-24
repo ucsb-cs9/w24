@@ -20,6 +20,7 @@ In this lab, we will utilize many concepts covered in the course so far includin
 
 # Introduction
 
+<img style="float: right; margin: 5px;" alt="Meme Caption for the astonished koala: My face when I am eating a salad and everyone else is eating a pizza" src="https://i.imgflip.com/39o454.jpg" />
 The goal for this lab is to write a program that will manage incoming salad orders. All salad orders have an associated time representing when the customer expects to have their salad ready (it's possible for a customer to call ahead and schedule a later pickup time). All salad orders will be managed by a **MinHeap** where the next order to prepare is the one that is the earliest compared to the other orders.
 
 In order to manage salad orders for this lab, you will design various Salad classes (`Salad`, `CustomSalad`, and `SpecialtySalad` that utilizes inheritance / polymorphism), a `SaladOrder` class representing a collection of Salads a customer wants to place in a single order, and an `OrderQueue` class that organizes the Salad orders in a MinHeap data structure.
@@ -29,12 +30,12 @@ You will also write pytests in `testFile.py` illustrating your behavior works co
 # Instructions
 
 You will need to create six files:
-* `Salad.py` - Defines a Salad class representing commonality for all Salads. For simplicity, this class will assume all Salads have a `size` and `price`
-* `CustomSalad.py` - Defines a child class of Salad. This class should inherit all fields / methods from the Salad class, but also introduces the concepts of toppings a customer can order (represented as a list of strings)
-* `SpecialtySalad.py` - Defines a child class of Salad. This class should inherit all fields / methods from the Salad class. Specialty salads are defined by a name attribute and all have a set price depending on the salad size
-* `SaladOrder.py` - Defines a class that is a collection of salad objects the customer wants to order. The total price for the order can be derived from each individual salad price. This class will also have an expected time of when the customer would like their salads ready for pickup. More details on this later in the writeup
+* `Salad.py` - Defines a Salad class representing commonality for all Salads. For simplicity, this class will assume all Salads have a `size` and `price`.
+* `CustomSalad.py` - Defines a child class of Salad. This class should inherit all fields / methods from the Salad class, but also introduces the concepts of toppings a customer can order (represented as a list of strings).
+* `SpecialtySalad.py` - Defines a child class of Salad. This class should inherit all fields / methods from the Salad class. Specialty salads are defined by a name attribute and all have a set price depending on the salad size.
+* `SaladOrder.py` - Defines a class that is a collection of salad objects the customer wants to order. The total price for the order can be derived from each individual salad price. This class will also have an expected time of when the customer would like their salads ready for pickup. More details on this later in the writeup.
 * `OrderQueue.py` - Defines a MinHeap to organize and process Salad Orders according to their expected time of pickup. You can adapt the Heap implementation shown in the textbook supporting the specifications in this lab.
-* `testFile.py` - This file will contain your pytest functions that tests the overall correctness of your class definitions
+* `testFile.py` - This file will contain your pytest functions that tests the overall correctness of your class definitions.
 
 There will be no starter code for this assignment, but rather class descriptions and required methods are defined in the specification below.
 
@@ -119,6 +120,10 @@ Price: $18.75\n"
 ```
 
 ## SpecialtySalad.py
+
+<img style="float: right; margin: 5px;" alt="Meme Caption for the angry Gordon Ramsey yelling: How the hell do you manage to burn a salad?" src="https://i.imgflip.com/2qbmkm.jpg" />
+
+
 A `SpecialtySalad` class definition will exist in `SpecialtySalad.py`. Similar to a `CustomSalad` object, the class constructor will take in a size as well as the name for the specialty salad. 
 
 * `__init__(self, size, name)`
@@ -205,6 +210,8 @@ TOTAL ORDER PRICE: $24.75\n\
 
 # OrderQueue.py
 
+<img style="float: right; margin: 5px;" alt="Meme Caption for the curious chicken: What went bad first - the chicken or the egg salad?" src="https://i.imgflip.com/1megy8.jpg" />
+
 The `OrderQueue` class will be defined in `OrderQueue.py`. This priority queue is implemented as a MinHeap data structure. The `OrderQueue` will manage `SaladOrder` objects based on their `time` attribute.
 
 * `__init__(self)` - the constructor for the `OrderQueue` will simply initialize the Python List representing the MinHeap.
@@ -219,6 +226,8 @@ In addition to the construction of the MinHeap in this class, two methods are re
 The automated tests will create various salad orders with different time attributes. It will then call `process_next_order()` one at a time and check the removed SaladOrder is in the right priority by checking their expected `info()` string. You should write similar tests to confirm the MinHeap state is in the correct order.
 
 # testFile.py
+
+<img style="float: left; margin: 5px;" alt="Meme Caption for the green unimpressed cat: I do not eat salad" src="https://i.imgflip.com/2kifto.jpg" />
 
 This file should test all of your classes using pytest. Think of various scenarios and edge cases when testing your code according to the given descriptions. You should test every class' method functionality (except for getters / setters). Even though Gradescope will not use this file when running automated tests (there are separate tests defined for this), it is important to provide this file with various test cases (testing is important!!).
 
