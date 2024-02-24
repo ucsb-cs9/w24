@@ -210,7 +210,7 @@ TOTAL ORDER PRICE: $24.75\n\
 
 # OrderQueue.py
 
-<img style="float: right; margin: 5px;" alt="Meme Caption for the curious chicken: What went bad first - the chicken or the egg salad?" src="https://i.imgflip.com/1megy8.jpg" />
+<img style="float: right; margin: 5px; width: 300px" alt="Meme Caption for the curious chicken: What went bad first - the chicken or the egg salad?" src="https://i.imgflip.com/1megy8.jpg" />
 
 The `OrderQueue` class will be defined in `OrderQueue.py`. This priority queue is implemented as a MinHeap data structure. The `OrderQueue` will manage `SaladOrder` objects based on their `time` attribute.
 
@@ -227,7 +227,7 @@ The automated tests will create various salad orders with different time attribu
 
 # testFile.py
 
-<img style="float: left; margin: 5px;" alt="Meme Caption for the green unimpressed cat: I do not eat salad" src="https://i.imgflip.com/2kifto.jpg" />
+<img style="float: left; margin: 5px; width: 300px" alt="Meme Caption for the green unimpressed cat: I do not eat salad" src="https://i.imgflip.com/2kifto.jpg" />
 
 This file should test all of your classes using pytest. Think of various scenarios and edge cases when testing your code according to the given descriptions. You should test every class' method functionality (except for getters / setters). Even though Gradescope will not use this file when running automated tests (there are separate tests defined for this), it is important to provide this file with various test cases (testing is important!!).
 
