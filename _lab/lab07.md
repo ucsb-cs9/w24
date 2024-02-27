@@ -13,7 +13,6 @@ In this lab, we will utilize many concepts covered in the course so far includin
 
 * Inheritance and Polymorphism
 * Implementing and applying the Heap data structure as a priority queue
-* Defining and raising Exceptions
 * Testing your functionality with pytest
 
 **Note: It is important that you try and start this lab early so you can utilize our office hours to seek assistance / ask clarifying questions during the weekdays before the deadline if needed!**
@@ -216,12 +215,10 @@ The `OrderQueue` class will be defined in `OrderQueue.py`. This priority queue i
 
 * `__init__(self)` - the constructor for the `OrderQueue` will simply initialize the Python List representing the MinHeap.
 
-Since it's possible to remove from an empty `OrderQueue`, we will create and raise an exception when this is done. You will define a `QueueEmptyException` class in `OrderQueue.py` that doesn't do anything except define an `Exception` object to raise when this happens (recall, we did do an example of defining basic Exception class types).
-
 In addition to the construction of the MinHeap in this class, two methods are required to be implemented:
 
 * `add_order(self, saladOrder)` - a `saladOrder` object will be stored in the MinHeap *prioritized by its time attribute* (lower value means higher priority)
-* `process_next_order(self)` - this removes the root node from the MinHeap (and restructures the MinHeap), and returns a string containing the root value's salad order description
+* `process_next_order(self)` - this removes the root node from the MinHeap (and restructures the MinHeap), and returns a string containing the root value's salad order description. If the `OrderQueue` is empty, then it should return an empty string.
 
 The automated tests will create various salad orders with different time attributes. It will then call `process_next_order()` one at a time and check the removed SaladOrder is in the right priority by checking their expected `info()` string. You should write similar tests to confirm the MinHeap state is in the correct order.
 
