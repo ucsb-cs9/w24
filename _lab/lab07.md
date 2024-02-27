@@ -96,10 +96,12 @@ There are two more methods this class should support:
 cs1 = CustomSalad("S")
 
 assert cs1.get_salad_details() == \
-"CUSTOM SALAD\n\
-Size: S\n\
-Toppings:\n\
-Price: $8.75\n"
+"""\
+CUSTOM SALAD
+Size: S
+Toppings:
+Price: $8.75
+"""
 ```
 
 `CustomSalad` with a list of toppings example (note that each topping will be indented with a tab):
@@ -110,12 +112,14 @@ cs1.add_topping("chicken")
 cs1.add_topping("cucumbers")
 
 assert cs1.get_salad_details() == \
-"CUSTOM SALAD\n\
-Size: L\n\
-Toppings:\n\
-\t+ chicken\n\
-\t+ cucumbers\n\
-Price: $18.75\n"
+"""\
+CUSTOM SALAD
+Size: L
+Toppings:
+\t+ chicken
+\t+ cucumbers
+Price: $18.75
+"""
 ```
 
 ## SpecialtySalad.py
@@ -141,11 +145,13 @@ A sample output test for `get_salad_details()`:
 
 ```python
 ss1 = SpecialtySalad("S", "Cobb")
-assert ss1.getSaladDetails() == \
-"SPECIALTY SALAD\n\
-Size: S\n\
-Name: Cobb\n\
-Price: $12.50\n"
+assert ss1.get_salad_details() == \
+"""\
+SPECIALTY SALAD
+Size: S
+Name: Cobb
+Price: $12.50
+"""
 ```
 
 # SaladOrder.py
@@ -187,24 +193,26 @@ order.add_salad(cs1)
 order.add_salad(ss1)
 
 assert order.info() == \
-"***\n\
-Order Time: 123000\n\
-CUSTOM SALAD\n\
-Size: S\n\
-Toppings:\n\
-\t+ chicken\n\
-\t+ cucumber\n\
-Price: $12.25\n\
-\n\
-----\n\
-SPECIALTY SALAD\n\
-Size: S\n\
-Name: Cobb\n\
-Price: $12.50\n\
-\n\
-----\n\
-TOTAL ORDER PRICE: $24.75\n\
-***\n"
+"""\
+***
+Order Time: 123000
+CUSTOM SALAD
+Size: S
+Toppings:
+\t+ chicken
+\t+ cucumber
+Price: $12.25
+
+----
+SPECIALTY SALAD
+Size: S
+Name: Cobb
+Price: $12.50
+
+----
+TOTAL ORDER PRICE: $24.75
+***
+"""
 ```
 
 # OrderQueue.py
