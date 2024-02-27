@@ -99,7 +99,7 @@ cs1 = CustomSalad("S")
 assert cs1.get_salad_details() == \
 """\
 CUSTOM SALAD
-Size: L
+Size: S
 Toppings:
 Price: $8.75
 """
