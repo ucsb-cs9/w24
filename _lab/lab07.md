@@ -174,10 +174,9 @@ The time format will be stored as an `int` in a 24-hour time format. For example
 * 1:14:23 PM --> 131423
 * 10:56:59 PM --> 225659
 
-In addition to the constructor, getters / setters for the time attribute, the ability to add Salad objects to the order, as well as a method to construct a string representing the order details will need to be implemented:
+In addition to the constructor, getters for the time attribute, the ability to add Salad objects to the order, as well as a method to construct a string representing the order details will need to be implemented:
 
 * `get_time(self)`
-* `set_time(self, time)`
 * `add_salad(self, salad)` - will add the Salad object to the end of the Python List
 * `info(self)` - constructs and returns a string containing the time of the order, all information for each salad in the order, as well as the total order price. Since we're storing various Salad objects in this class, we can utilize polymorphism and simply call the `get_salad_details()` method on the Salad objects when constructing the string for our entire order, as well as `get_price()` to compute the `SaladOrder` total price
 
