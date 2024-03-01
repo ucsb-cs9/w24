@@ -201,6 +201,70 @@ Make: NISSAN, Model: LEAF, Year: 2018, Price: $18000
 """
 ```
 
+As part of the debugging process, we are providing you two functions to visually represent the BST to ensure it looks similar to your thought. Make use of these carefully through multiple steps of your methods - For e.g. in `inorder`, you can print out the visual representation of your subtree in each step of the recursion so that you can validate your theoretical assumption in action. If you want to call this method inside your call, you can do this by running `show_tree(self.root)` or `show_tree(node)` or `show_tree(car_inventory_object.root)`. Below is the code snippet for the functions and the corresponding logic to see it in action - 
+
+```python
+def show_tree(node):
+    """
+    * -> Indicates the base node
+    L -> Indicates the left child of the base node
+    R -> Indicates the right child of the base node
+    LR -> Indicates the right child of the left child of the base node
+    ..... and so on
+    """
+    import sys
+    from io import StringIO
+    old_stdout = sys.stdout
+    sys.stdout = StringIO()
+    if node is None:
+        print("No cars in inventory.")
+    else:
+        print(f"Showing Tree Representation of Children under Node - Make: {node.get_make()}, Model: {node.get_model()}\n")
+        _print_tree(node, 0, "")
+        print("\nEnd of the car inventory. \n")
+    print("\n" + "="*50 + "\n")
+    contents = sys.stdout.getvalue()
+    sys.stdout = old_stdout
+    print(contents)        
+
+def _print_tree(node, level, position):
+    if node is not None:
+        _print_tree(node.get_right(), level + 1, position + "R")
+        print("   " * level + "|----" + f"(Level {level}) {node.get_make()} : {node.get_model()} ({position if position else '*'})")
+        _print_tree(node.get_left(), level + 1, position + "L")
+
+if __name__ == "__main__":
+    inventory = CarInventory()
+    # Adding some cars
+    inventory.add_car(Car("Toyota", "Camry", 2020, 25000))
+    inventory.add_car(Car("Honda", "Accord", 2019, 23000))
+    inventory.add_car(Car("Toyota", "Corolla", 2018, 20000))
+    inventory.add_car(Car("Honda", "Civic", 2021, 22000))
+    inventory.add_car(Car("Ford", "Fusion", 2017, 18000))
+    inventory.add_car(Car("Chevrolet", "Malibu", 2016, 17000))
+    # Displaying the inventory
+    show_tree(inventory.root)
+```
+
+The output for this should look like this - 
+
+```
+Showing Tree Representation of Children under Node - Make: TOYOTA, Model: CAMRY
+
+   |----(Level 1) TOYOTA : COROLLA (R)
+|----(Level 0) TOYOTA : CAMRY (*)
+      |----(Level 2) HONDA : CIVIC (LR)
+   |----(Level 1) HONDA : ACCORD (L)
+      |----(Level 2) FORD : FUSION (LL)
+         |----(Level 3) CHEVROLET : MALIBU (LLL)
+
+End of the car inventory. 
+
+
+==================================================
+
+```
+
 Other than the required methods, feel free to implement any helper methods that you think are useful in your implementation (Gradescope will test the required methods). The automated tests will test your implementation of the required methods by creating a `CarInventory` containing various `CarInventoryNode`s containing `Car`s with different `make`, `model`, `year`, and `price` attributes. The `add_car()` method will be run, with `does_car_exist()`, `get_best_car()`, `get_worst_car()`, `inorder()`, `preorder()`, and `postorder()`, etc. being used to verify that the `CarInventory` is fully functional. You should write similar tests to confirm your BST is working properly.
 
 # testFile.py
