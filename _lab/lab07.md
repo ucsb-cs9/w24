@@ -1,7 +1,7 @@
 ---
 layout: lab
 num: lab07
-ready: draft
+ready: true
 desc: "Soup or Salad?"
 assigned: 2024-02-23 23:59:59.59-7
 due: 2024-03-4 23:59:59.59-7
