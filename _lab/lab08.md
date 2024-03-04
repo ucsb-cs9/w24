@@ -1,7 +1,7 @@
 ---
 layout: lab
 num: lab08
-ready: draft
+ready: true
 desc: "Used Car Lot"
 assigned: 2024-03-01 23:59:59.59-7
 due: 2024-03-11 23:59:59.59-7
@@ -128,8 +128,8 @@ In addition to the construction of the BST in this class, the following methods 
 * `inorder(self)` - returns a string with the in-order traversal of the BST. Printing the in-order traversal should help check that the cars are in the correct order in the BST
 * `preorder(self)` - returns a string with the pre-order traversal of the BST. BSTs with the same structure should always have the same pre-order traversal, so this can be used to verify that everything was inserted correctly
 * `postorder(self)` - returns a string with the post-order traversal of the BST.
-* `get_best_car(self, make, model)` - returns the `Car` with the newest year - and if multiple, then highest price - given the make and model. If the make and model doesn't exist, then return None.
-* `get_worst_car(self, make, model)` - returns the car with the oldest year - and if multiple, then lowest price - given the make and model. If the make and model doesn't exist, then return None.
+* `get_best_car(self, make, model)` - returns the `Car` with the newest year - and if multiple, then highest price - given the make and model. If the make and model doesn't exist, then return None. **Note: The make and model are case insensitive and should be converted to upper case while searching**
+* `get_worst_car(self, make, model)` - returns the car with the oldest year - and if multiple, then lowest price - given the make and model. If the make and model doesn't exist, then return None. **Note: The make and model are case insensitive and should be converted to upper case while searching**
 * `get_total_inventory_price(self)` - returns an integer the total price of all the cars in the dealership. 
 
 Given an example BST:
@@ -269,7 +269,191 @@ Other than the required methods, feel free to implement any helper methods that 
 
 # testFile.py
 
-This file should test all of your classes and required methods using pytest. Think of various scenarios and edge cases when testing your code according to the given descriptions. You should test every class' method functionality (except for getters / setters). Even though Gradescope will not use this file when running automated tests (there are separate tests defined for this), it is important to provide this file with various test cases (testing is important!!).
+This file should test all of your classes and required methods using pytest. Think of various scenarios and edge cases when testing your code according to the given descriptions. You should test every class' method functionality. Even though Gradescope will not use this file when running automated tests (there are separate tests defined for this), it is important to provide this file with various test cases (testing is important!!). Here, examples of various test cases could be different tree structures. We are providing you with a few example tree structures, for which you may write pytests.
+
+
+```python
+# Example 1:
+bst = CarInventory()
+car1 = Car("Nissan", "Leaf", 2018, 18000)
+car2 = Car("Tesla", "Model3", 2018, 50000)
+car3 = Car("Mercedes", "Sprinter", 2022, 40000)
+car4 = Car("Mercedes", "Sprinter", 2014, 25000)
+car5 = Car("Ford", "Ranger", 2021, 25000)
+bst.add_car(car1)
+bst.add_car(car2)
+bst.add_car(car3)
+bst.add_car(car4)
+bst.add_car(car5)
+show_tree(bst.root)
+
+# Showing Tree Representation of Children under Node - Make: NISSAN, Model: LEAF
+
+#    |----(Level 1) TESLA : MODEL3 (R)
+# |----(Level 0) NISSAN : LEAF (*)
+#    |----(Level 1) MERCEDES : SPRINTER (L)
+#       |----(Level 2) FORD : RANGER (LL)
+
+# End of the car inventory. 
+
+
+# ==================================================
+
+
+# Example 2:
+bst1 = CarInventory()
+car1 = Car("toyota", "prius", 2022, 25000)
+car2 = Car("Honda", "ODYSSEY", 2009, 30000)
+car3 = Car("Ferrari", "testarossa", 1990, 100000)
+car4 = Car("Chevrolet", "Equinox", 2011, 10000)
+bst1.add_car(car1)
+bst1.add_car(car2)
+bst1.add_car(car3)
+bst1.add_car(car4)
+show_tree(bst.root)
+
+# Showing Tree Representation of Children under Node - Make: TOYOTA, Model: PRIUS
+
+# |----(Level 0) TOYOTA : PRIUS (*)
+#    |----(Level 1) HONDA : ODYSSEY (L)
+#       |----(Level 2) FERRARI : TESTAROSSA (LL)
+#          |----(Level 3) CHEVROLET : EQUINOX (LLL)
+
+# End of the car inventory. 
+
+
+# ==================================================
+
+
+# Example 3:
+bst2 = CarInventory()
+car5 = Car("toyota", "prius", 2022, 25000)
+car6 = Car("Honda", "ODYSSEY", 2009, 30000)
+car7 = Car("Ferrari", "testarossa", 1990, 100000)
+car8 = Car("Chevrolet", "Equinox", 2011, 10000)
+bst2.add_car(car8)
+bst2.add_car(car7)
+bst2.add_car(car6)
+bst2.add_car(car5)
+show_tree(bst.root)
+
+# Showing Tree Representation of Children under Node - Make: CHEVROLET, Model: EQUINOX
+
+#          |----(Level 3) TOYOTA : PRIUS (RRR)
+#       |----(Level 2) HONDA : ODYSSEY (RR)
+#    |----(Level 1) FERRARI : TESTAROSSA (R)
+# |----(Level 0) CHEVROLET : EQUINOX (*)
+
+# End of the car inventory. 
+
+
+# ==================================================
+
+
+# Example 4:
+bst = CarInventory()
+car1 = Car("toyota", "prius", 2022, 25000)
+car2 = Car("Honda", "ODYSSEY", 2009, 30000)
+car3 = Car("Chevrolet", "Equinox", 2011, 10000)
+car4 = Car("Toyota", "Sienna", 2007, 35000)
+car5 = Car("Toyota", "Corolla", 2006, 10000)
+car6 = Car("toyota", "camry", 2007, 11000)
+car7 = Car("TOYOTA", "raV4", 2008, 12000)
+bst.add_car(car1)
+bst.add_car(car2)
+bst.add_car(car3)
+bst.add_car(car4)
+bst.add_car(car5)
+bst.add_car(car6)
+bst.add_car(car7)
+show_tree(bst.root)
+
+# Showing Tree Representation of Children under Node - Make: TOYOTA, Model: PRIUS
+
+#    |----(Level 1) TOYOTA : SIENNA (R)
+#       |----(Level 2) TOYOTA : RAV4 (RL)
+# |----(Level 0) TOYOTA : PRIUS (*)
+#       |----(Level 2) TOYOTA : COROLLA (LR)
+#          |----(Level 3) TOYOTA : CAMRY (LRL)
+#    |----(Level 1) HONDA : ODYSSEY (L)
+#       |----(Level 2) CHEVROLET : EQUINOX (LL)
+
+# End of the car inventory. 
+
+
+# ==================================================
+
+
+# Example 5:
+bst = CarInventory()
+car1 = Car("toyota", "prius", 2022, 25000)
+car1A = Car("TOYOTA", "PRIUS", 2022, 30000)
+car2 = Car("Honda", "ODYSSEY", 2009, 30000)
+car3 = Car("Chevrolet", "Equinox", 2011, 10000)
+car4 = Car("Toyota", "Sienna", 2007, 35000)
+car5 = Car("Toyota", "Corolla", 2006, 10000)
+car6 = Car("toyota", "camry", 2007, 11000)
+car7 = Car("TOYOTA", "raV4", 2008, 12000)
+car8 = Car("toyota", "yaris", 2005, 2000)
+car9 = Car("toyota", "4runner", 2007, 10000)
+bst.add_car(car8)
+bst.add_car(car4)
+bst.add_car(car7)
+bst.add_car(car6)
+bst.add_car(car1A)
+bst.add_car(car5)
+bst.add_car(car3)
+bst.add_car(car2)
+bst.add_car(car1)
+bst.add_car(car9)
+show_tree(bst.root)
+
+# Showing Tree Representation of Children under Node - Make: TOYOTA, Model: YARIS
+
+# |----(Level 0) TOYOTA : YARIS (*)
+#    |----(Level 1) TOYOTA : SIENNA (L)
+#       |----(Level 2) TOYOTA : RAV4 (LL)
+#             |----(Level 4) TOYOTA : PRIUS (LLLR)
+#                |----(Level 5) TOYOTA : COROLLA (LLLRL)
+#          |----(Level 3) TOYOTA : CAMRY (LLL)
+#                   |----(Level 6) TOYOTA : 4RUNNER (LLLLRR)
+#                |----(Level 5) HONDA : ODYSSEY (LLLLR)
+#             |----(Level 4) CHEVROLET : EQUINOX (LLLL)
+
+# End of the car inventory. 
+
+
+# ==================================================
+
+# Example 6:
+bst = CarInventory()
+car1 = Car("toyota", "prius", 2022, 25000)
+car2 = Car("Honda", "ODYSSEY", 2009, 30000)
+car3 = Car("Ferrari", "testarossa", 1990, 100000)
+car4 = Car("ferrari", "monza", 2020, 500000)
+car5 = Car("Chevrolet", "Equinox", 2011, 10000)
+bst.add_car(car1)
+bst.add_car(car5)
+bst.add_car(car2)
+bst.add_car(car4)
+bst.add_car(car3)
+show_tree(bst.root)
+
+# Showing Tree Representation of Children under Node - Make: TOYOTA, Model: PRIUS
+
+# |----(Level 0) TOYOTA : PRIUS (*)
+#       |----(Level 2) HONDA : ODYSSEY (LR)
+#             |----(Level 4) FERRARI : TESTAROSSA (LRLR)
+#          |----(Level 3) FERRARI : MONZA (LRL)
+#    |----(Level 1) CHEVROLET : EQUINOX (L)
+
+# End of the car inventory. 
+
+
+# ==================================================
+
+```
+**Hint: use the traversal methods (inorder, preorder and/or postorder) to test the above tree structures**
 
 **A note about Gradescope tests:** Gradescope will use your functions to correctly check the state of your Cars and CarInventory with many scenarios. In order to test if everything is in the correct state, these tests use your CarInventory's `preorder` / `inorder` / `postorder` traversals and `add_car` methods, as well as getting the string representation of your Cars (using your `__str__` overloaded method in `Car`) to run other tests such as CarInventory's `does_car_exist`, `get_best_car`, `get_worst_car`, `get_total_inventory_price`, etc. It is important to ensure your `preorder` / `inorder` / `postorder` traversals, Car's `__str__` method, and `CarInventory`'s `add_car` methods work correctly first or else many of the other tests may not pass.
 
