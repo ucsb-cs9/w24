@@ -1,5 +1,5 @@
 ---
-num: "Lecture 16"
+num: "Lecture 18"
 desc: "Quicksort, Binary Search Tree Deletion"
 ready: true
 lecture_date: 2024-03-07 14:00:00.00-7:00
