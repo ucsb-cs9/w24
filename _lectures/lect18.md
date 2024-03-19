@@ -7,6 +7,8 @@ lecture_date: 2024-03-07 14:00:00.00-7:00
 
 [Slides folder]({{ site.slides_url }})
 
+[Recording](https://www.loom.com/share/2ee41a8228c240928c031a06979802de?sid=fab131f0-fa59-450f-aab3-8612700c8602)
+
 # Quicksort
 * Quicksort is another divide-and-conquer algorithm
 * Can improve running times to **O(n log n)** in a typical case, but we’ll see how this can also lead to O(n<sup>2</sup>) in a worst-case scenario
